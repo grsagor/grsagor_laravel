@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/base.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/vendor.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
 
     <!-- script
    ================================================== -->
@@ -45,7 +46,7 @@
                 <a class="menu-toggle" href="#"><span>Menu</span></a>
 
                 <div class="logo">
-                    <a href="index.html">SagorTheNoob</a>
+                    <a class="smoothscroll" href="#intro">SagorTheNoob</a>
                 </div>
 
                 <nav id="main-nav-wrap">
@@ -56,7 +57,7 @@
                         <li><a class="smoothscroll" href="#portfolio" title="">Portfolio</a></li>
                         <li><a class="smoothscroll" href="#services" title="">Services</a></li>
                         <li><a class="smoothscroll" href="#contact" title="">Contact</a></li>
-                        <li><a href="styles.html" title="">Style Demo</a></li>
+                        {{-- <li><a href="styles.html" title="">Style Demo</a></li> --}}
                     </ul>
                 </nav>
             </div> <!-- /top-bar -->
@@ -90,11 +91,12 @@
         </div> <!-- /intro-content -->
 
         <ul class="intro-social">
-            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-            <li><a href="#"><i class="fa fa-behance"></i></a></li>
-            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-            <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+            <li><a target="_blank" href="https://facebook.com/iamgrsagor"><i class="fa-brands fa-facebook-f"></i></a></li>
+            <li><a target="_blank" href="https://github.com/grsagor"><i class="fa-brands fa-github"></i></a></li>
+            <li><a target="_blank" href="https://www.linkedin.com/in/iamgrsagor/"><i class="fa-brands fa-linkedin-in"></i></a></li>
+            <li><a target="_blank" href="https://medium.com/@iamgrsagor"><i class="fa-brands fa-medium"></i></a></li>
+            <li><a target="_blank" href="https://dev.to/iamgrsagor"><i class="fa-brands fa-dev"></i></a></li>
+            <li><a target="_blank" href="https://x.com/iamgrsagor"><i class="fa-brands fa-x-twitter"></i></a></li>
         </ul> <!-- /intro-social -->
 
     </section> <!-- /intro -->
@@ -173,54 +175,12 @@
                     maintainable code. Here’s a breakdown of my core competencies:</p>
 
                 <ul class="skill-bars">
-                    <li>
-                        <div class="progress percent90"><span>90%</span></div>
-                        <strong>ReactJS</strong>
-                    </li>
-                    <li>
-                        <div class="progress percent85"><span>85%</span></div>
-                        <strong>Next.js</strong>
-                    </li>
-                    <li>
-                        <div class="progress percent70"><span>80%</span></div>
-                        <strong>Laravel</strong>
-                    </li>
-                    <li>
-                        <div class="progress percent95"><span>95%</span></div>
-                        <strong>PHP</strong>
-                    </li>
-                    <li>
-                        <div class="progress percent75"><span>75%</span></div>
-                        <strong>Wordpress</strong>
-                    </li>
-                    <li>
-                        <div class="progress percent75"><span>85%</span></div>
-                        <strong>WooCommerce & WordPress Development</strong>
-                    </li>
-                    <li>
-                        <div class="progress percent75"><span>75%</span></div>
-                        <strong>JavaScript (Vanilla JS, ES6+)</strong>
-                    </li>
-                    <li>
-                        <div class="progress percent75"><span>70%</span></div>
-                        <strong>jQuery</strong>
-                    </li>
-                    <li>
-                        <div class="progress percent75"><span>80%</span></div>
-                        <strong>Bootstrap & Tailwind CSS</strong>
-                    </li>
-                    <li>
-                        <div class="progress percent75"><span>85%</span></div>
-                        <strong>HTML5</strong>
-                    </li>
-                    <li>
-                        <div class="progress percent75"><span>80%</span></div>
-                        <strong>CSS3</strong>
-                    </li>
-                    <li>
-                        <div class="progress percent75"><span>65%</span></div>
-                        <strong>Node.js</strong>
-                    </li>
+                    @foreach ($technologies as $technology)
+                        <li>
+                            <strong>{{ $technology->name }}</strong>
+                            <div class="position-relative"><div class="progress percent{{ $technology->skill }}"><span>{{ $technology->skill }}%</span></div></div>
+                        </li>
+                    @endforeach
 
                 </ul> <!-- /skill-bars -->
 
@@ -231,7 +191,7 @@
         <div class="row button-section">
             <div class="col-twelve">
                 <a href="#contact" title="Hire Me" class="button stroke smoothscroll">Hire Me</a>
-                <a href="#" title="Download CV" class="button button-primary">Download CV</a>
+                {{-- <a href="#" title="Download CV" class="button button-primary">Download CV</a> --}}
             </div>
         </div>
 
@@ -248,8 +208,7 @@
                 <h5>Resume</h5>
                 <h1>More of my credentials.</h1>
 
-                <p class="lead">Lorem ipsum Do commodo in proident enim in dolor cupidatat adipisicing dolore officia
-                    nisi aliqua incididunt Ut veniam lorem ipsum Consectetur ut in in eu do.</p>
+                <p class="lead">I am a dedicated and skilled professional with experience in various programming languages and frameworks. I specialize in creating efficient, high-quality web applications and collaborating effectively with teams to deliver exceptional results.</p>
 
             </div>
         </div> <!-- /section-intro-->
@@ -265,70 +224,32 @@
             <div class="col-twelve">
 
                 <div class="timeline-wrap">
-
                     <div class="timeline-block">
-
                         <div class="timeline-ico">
                             <i class="fa fa-graduation-cap"></i>
                         </div>
-
                         <div class="timeline-header">
-                            <h3>UI Designer</h3>
-                            <p>July 2015 - Present</p>
+                            <h3>Software Engineer</h3>
+                            <p>October 2024 - Present</p>
                         </div>
-
                         <div class="timeline-content">
-                            <h4>Awesome Studio</h4>
-                            <p>Lorem ipsum Occaecat do esse ex et dolor culpa nisi ex in magna consectetur nisi
-                                cupidatat laboris esse eiusmod deserunt aute do quis velit esse sed Ut proident
-                                cupidatat nulla esse cillum laborum occaecat nostrud sit dolor incididunt amet est
-                                occaecat nisi.</p>
+                            <h4>TheDevGarden</h4>
+                            <p>At TheDevGarden, I work as a software engineer. My responsibilities include creating Next.js templates, customizing WordPress websites, and assisting teammates with JavaScript-related problems. I focus on delivering efficient solutions while ensuring teamwork and code quality in all projects.</p>
                         </div>
-
-                    </div> <!-- /timeline-block -->
-
+                    </div>
                     <div class="timeline-block">
-
                         <div class="timeline-ico">
                             <i class="fa fa-graduation-cap"></i>
                         </div>
-
                         <div class="timeline-header">
-                            <h3>Front-end Developer</h3>
-                            <p>July 2014 - June 2015</p>
+                            <h3>Associate Software Engineer</h3>
+                            <p>February 2023 - September 2024</p>
                         </div>
-
                         <div class="timeline-content">
-                            <h4>Super Cool Agency</h4>
-                            <p>Lorem ipsum Occaecat do esse ex et dolor culpa nisi ex in magna consectetur nisi
-                                cupidatat laboris esse eiusmod deserunt aute do quis velit esse sed Ut proident
-                                cupidatat nulla esse cillum laborum occaecat nostrud sit dolor incididunt amet est
-                                occaecat nisi incididunt.</p>
+                            <h4>NexKraft Limited</h4>
+                            <p>At NexKraft Limited, I worked on a diverse range of programming languages and frameworks, including Laravel, PHP, React, Next.js, and Angular. My role involved developing robust web applications, enhancing functionality, and ensuring code quality across projects while collaborating effectively with the team.</p>
                         </div>
-
-                    </div> <!-- /timeline-block -->
-
-                    <div class="timeline-block">
-
-                        <div class="timeline-ico">
-                            <i class="fa fa-graduation-cap"></i>
-                        </div>
-
-                        <div class="timeline-header">
-                            <h3>Web Designer</h3>
-                            <p>May 2013 - June 2014</p>
-                        </div>
-
-                        <div class="timeline-content">
-                            <h4>Great Designs Studio</h4>
-                            <p>Lorem ipsum Occaecat do esse ex et dolor culpa nisi ex in magna consectetur nisi
-                                cupidatat laboris esse eiusmod deserunt aute do quis velit esse sed Ut proident
-                                cupidatat nulla esse cillum laborum occaecat nostrud sit dolor incididunt amet est
-                                occaecat nisi incididunt.</p>
-                        </div>
-
-                    </div> <!-- /timeline-block -->
-
+                    </div>
                 </div> <!-- /timeline-wrap -->
 
             </div> <!-- /col-twelve -->
@@ -346,7 +267,6 @@
             <div class="col-twelve">
 
                 <div class="timeline-wrap">
-
                     <div class="timeline-block">
 
                         <div class="timeline-ico">
@@ -354,62 +274,16 @@
                         </div>
 
                         <div class="timeline-header">
-                            <h3>Master Degree</h3>
-                            <p>July 2015 - Present</p>
+                            <h3>Bachelor in Computer Science & Engineering</h3>
+                            <p>January 2019 - December 2022</p>
                         </div>
 
                         <div class="timeline-content">
-                            <h4>University of Life</h4>
-                            <p>Lorem ipsum Occaecat do esse ex et dolor culpa nisi ex in magna consectetur nisi
-                                cupidatat laboris esse eiusmod deserunt aute do quis velit esse sed Ut proident
-                                cupidatat nulla esse cillum laborum occaecat nostrud sit dolor incididunt amet est
-                                occaecat nisi.</p>
+                            <h4>Stamford University Bangladesh</h4>
+                            <p>I completed my Bachelor’s degree in Computer Science & Engineering from Stamford University Bangladesh. During this time, I gained comprehensive knowledge in programming, algorithms, and software development, which laid the foundation for my skills in building efficient and innovative web applications.</p>
                         </div>
 
                     </div> <!-- /timeline-block -->
-
-                    <div class="timeline-block">
-
-                        <div class="timeline-ico">
-                            <i class="fa fa-briefcase"></i>
-                        </div>
-
-                        <div class="timeline-header">
-                            <h3>Bachelor Degree</h3>
-                            <p>July 2014 - June 2015</p>
-                        </div>
-
-                        <div class="timeline-content">
-                            <h4>State Design University</h4>
-                            <p>Lorem ipsum Occaecat do esse ex et dolor culpa nisi ex in magna consectetur nisi
-                                cupidatat laboris esse eiusmod deserunt aute do quis velit esse sed Ut proident
-                                cupidatat nulla esse cillum laborum occaecat nostrud sit dolor incididunt amet est
-                                occaecat nisi incididunt.</p>
-                        </div>
-
-                    </div> <!-- /timeline-block -->
-
-                    <div class="timeline-block">
-
-                        <div class="timeline-ico">
-                            <i class="fa fa-briefcase"></i>
-                        </div>
-
-                        <div class="timeline-header">
-                            <h3>Bachelor Degree</h3>
-                            <p>May 2013 - June 2014</p>
-                        </div>
-
-                        <div class="timeline-content">
-                            <h4>Design College</h4>
-                            <p>Lorem ipsum Occaecat do esse ex et dolor culpa nisi ex in magna consectetur nisi
-                                cupidatat laboris esse eiusmod deserunt aute do quis velit esse sed Ut proident
-                                cupidatat nulla esse cillum laborum occaecat nostrud sit dolor incididunt amet est
-                                occaecat nisi incididunt.</p>
-                        </div>
-
-                    </div> <!-- /timeline-block -->
-
                 </div> <!-- /timeline-wrap -->
 
             </div> <!-- /col-twelve -->
@@ -429,8 +303,7 @@
                 <h5>Portfolio</h5>
                 <h1>Check Out Some of My Works.</h1>
 
-                <p class="lead">Lorem ipsum Do commodo in proident enim in dolor cupidatat adipisicing dolore officia
-                    nisi aliqua incididunt Ut veniam lorem ipsum Consectetur ut in in eu do.</p>
+                <p class="lead">Explore a selection of projects showcasing my expertise in web development, including custom Next.js templates, WordPress customizations, and dynamic web applications built with React, Laravel, and Angular. Each project reflects my commitment to quality and innovation.</p>
 
             </div>
         </div> <!-- /section-intro-->
@@ -444,93 +317,28 @@
 
                     <div class="bgrid folio-item">
                         <div class="item-wrap">
-                            <img src="{{ asset('assets/images/portfolio/liberty.jpg') }}" alt="Liberty">
+                            <img src="{{ asset('assets/images/portfolio/abmgsac.png') }}" alt="Liberty">
                             <a href="#modal-01" class="overlay">
                                 <div class="folio-item-table">
                                     <div class="folio-item-cell">
-                                        <h3 class="folio-title">Liberty</h3>
+                                        <h3 class="folio-title">AMB Graduate School and College</h3>
                                         <span class="folio-types">
-                                            Graphic Design
+                                            Backend Development
                                         </span>
                                     </div>
                                 </div>
                             </a>
                         </div>
                     </div> <!-- /folio-item -->
-
                     <div class="bgrid folio-item">
                         <div class="item-wrap">
-                            <img src="{{ asset('assets/images/portfolio/shutterbug.jpg') }}" alt="Shutterbug">
+                            <img src="{{ asset('assets/images/portfolio/unipuler.png') }}" alt="Liberty">
                             <a href="#modal-02" class="overlay">
                                 <div class="folio-item-table">
                                     <div class="folio-item-cell">
-                                        <h3 class="folio-title">Shutterbug</h3>
+                                        <h3 class="folio-title">Unipuler</h3>
                                         <span class="folio-types">
-                                            Web Design
-                                        </span>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div> <!-- /folio-item -->
-
-                    <div class="bgrid folio-item">
-                        <div class="item-wrap">
-                            <img src="{{ asset('assets/images/portfolio/clouds.jpg') }}"alt="Clouds">
-                            <a href="#modal-03" class="overlay">
-                                <div class="folio-item-table">
-                                    <div class="folio-item-cell">
-                                        <h3 class="folio-title">Clouds</h3>
-                                        <span class="folio-types">
-                                            Web Design
-                                        </span>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div> <!-- /folio-item -->
-
-                    <div class="bgrid folio-item">
-                        <div class="item-wrap">
-                            <img src="{{ asset('assets/images/portfolio/beetle.jpg') }}" alt="Beetle">
-                            <a href="#modal-04" class="overlay">
-                                <div class="folio-item-table">
-                                    <div class="folio-item-cell">
-                                        <h3 class="folio-title">Beetle</h3>
-                                        <span class="folio-types">
-                                            Branding
-                                        </span>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div> <!-- /folio-item -->
-
-                    <div class="bgrid folio-item">
-                        <div class="item-wrap">
-                            <img src="{{ asset('assets/images/portfolio/lighthouse.jpg') }}" alt="Lighthouse">
-                            <a href="#modal-05" class="overlay">
-                                <div class="folio-item-table">
-                                    <div class="folio-item-cell">
-                                        <h3 class="folio-title">Lighthouse</h3>
-                                        <span class="folio-types">
-                                            Web Development
-                                        </span>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div> <!-- /folio-item -->
-
-                    <div class="bgrid folio-item">
-                        <div class="item-wrap">
-                            <img src="{{ asset('assets/images/portfolio/salad.jpg') }}" alt="Salad">
-                            <a href="#modal-06" class="overlay">
-                                <div class="folio-item-table">
-                                    <div class="folio-item-cell">
-                                        <h3 class="folio-title">Salad</h3>
-                                        <span class="folio-types">
-                                            Branding
+                                            Full-Stack Development
                                         </span>
                                     </div>
                                 </div>
@@ -543,130 +351,41 @@
                     <div id="modal-01" class="popup-modal slider mfp-hide">
 
                         <div class="media">
-                            <img src="{{ asset('assets/images/portfolio/modals/m-liberty.jpg') }}" alt="" />
+                            <img src="{{ asset('assets/images/portfolio/modals/abmgsac.png') }}" alt="" />
                         </div>
 
                         <div class="description-box">
-                            <h4>Liberty</h4>
-                            <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum
-                                auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
+                            <h4>AMB Graduate School and College</h4>
+                            <p>I transform static website content into fully dynamic, interactive, and user-friendly experiences tailored to meet your specific needs.</p>
 
-                            <div class="categories">Web Development</div>
+                            <div class="categories">Backend Development</div>
                         </div>
 
                         <div class="link-box">
-                            <a href="http://www.behance.net">Details</a>
+                            <a href="https://abmgsac.com">Visit</a>
                             <a href="#" class="popup-modal-dismiss">Close</a>
                         </div>
 
-                    </div> <!-- /modal-01 -->
-
+                    </div>
                     <div id="modal-02" class="popup-modal slider mfp-hide">
 
                         <div class="media">
-                            <img src="{{ asset('assets/images/portfolio/modals/m-shutterbug.jpg') }}"
-                                alt="" />
+                            <img src="{{ asset('assets/images/portfolio/modals/unipuler.png') }}" alt="" />
                         </div>
 
                         <div class="description-box">
-                            <h4>Shutterbug</h4>
-                            <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum
-                                auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
+                            <h4>Unipuler</h4>
+                            <p>This was a Codecanyon project where I fully customized the website to meet the client's specific requirements. I revamped the features, including integrating a payment gateway and adding product variations, making it a dynamic and tailored solution for the client’s needs.</p>
 
-                            <div class="categories">Web Design</div>
+                            <div class="categories">Full-Stack Development</div>
                         </div>
 
                         <div class="link-box">
-                            <a href="http://www.behance.net">Details</a>
+                            <a href="https://unipuler.com">Visit</a>
                             <a href="#" class="popup-modal-dismiss">Close</a>
                         </div>
 
-                    </div> <!-- /modal-02 -->
-
-                    <div id="modal-03" class="popup-modal slider mfp-hide">
-
-                        <div class="media">
-                            <img src="{{ asset('assets/images/portfolio/modals/m-clouds.jpg') }}" alt="" />
-                        </div>
-
-                        <div class="description-box">
-                            <h4>Clouds</h4>
-                            <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum
-                                auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
-
-                            <div class="categories">Web Design</div>
-                        </div>
-
-                        <div class="link-box">
-                            <a href="http://www.behance.net">Details</a>
-                            <a href="#" class="popup-modal-dismiss">Close</a>
-                        </div>
-
-                    </div> <!-- /modal-03 -->
-
-                    <div id="modal-04" class="popup-modal slider mfp-hide">
-
-                        <div class="media">
-                            <img src="{{ asset('assets/images/portfolio/modals/m-beetle.jpg') }}" alt="" />
-                        </div>
-
-                        <div class="description-box">
-                            <h4>Beetle</h4>
-                            <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum
-                                auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
-
-                            <div class="categories">Branding</div>
-                        </div>
-
-                        <div class="link-box">
-                            <a href="http://www.behance.net">Details</a>
-                            <a href="#" class="popup-modal-dismiss">Close</a>
-                        </div>
-
-                    </div> <!-- /modal-04 -->
-
-                    <div id="modal-05" class="popup-modal slider mfp-hide">
-
-                        <div class="media">
-                            <img src="{{ asset('assets/images/portfolio/modals/m-lighthouse.jpg') }}"
-                                alt="" />
-                        </div>
-
-                        <div class="description-box">
-                            <h4>Lighthouse</h4>
-                            <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum
-                                auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
-
-                            <div class="categories">Web Development</div>
-                        </div>
-
-                        <div class="link-box">
-                            <a href="http://www.behance.net">Details</a>
-                            <a href="#" class="popup-modal-dismiss">Close</a>
-                        </div>
-
-                    </div> <!-- /modal-05 -->
-
-                    <div id="modal-06" class="popup-modal slider mfp-hide">
-
-                        <div class="media">
-                            <img src="{{ asset('assets/images/portfolio/modals/m-salad.jpg') }}" alt="" />
-                        </div>
-
-                        <div class="description-box">
-                            <h4>Salad</h4>
-                            <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum
-                                auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
-
-                            <div class="categories">Branding</div>
-                        </div>
-
-                        <div class="link-box">
-                            <a href="http://www.behance.net">Details</a>
-                            <a href="#" class="popup-modal-dismiss">Close</a>
-                        </div>
-
-                    </div> <!-- /modal-06 -->
+                    </div>
 
 
                     <!-- modal popups - end
@@ -683,7 +402,7 @@
 
     <!-- CTA Section
    ================================================== -->
-    <section id="cta" class="grey-section">
+    {{-- <section id="cta" class="grey-section">
 
         <div class="row cta-content">
 
@@ -708,7 +427,7 @@
 
         </div> <!-- /cta-content -->
 
-    </section> <!-- /cta -->
+    </section> <!-- /cta --> --}}
 
 
     <!-- services Section
@@ -733,114 +452,19 @@
 
             <div id="owl-slider" class="owl-carousel services-list">
 
+                @foreach ($services as $service)
                 <div class="service">
 
-                    <span class="icon"><i class="icon-earth"></i></span>
+                    <span class="icon"><i class="{{ $service->icon }}"></i></span>
 
                     <div class="service-content">
 
-                        <h3>Webdesign</h3>
+                        <h3>{{ $service->title }}</h3>
 
-                        <p class="desc">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-                            doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et
-                            quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas
-                            sit aspernatur aut odit aut fugit.
-                        </p>
-
+                        <p class="desc">{{ $service->description }}</p>
                     </div>
-
-                </div> <!-- /service -->
-
-                <div class="service">
-
-                    <span class="icon"><i class="icon-window"></i></span>
-
-                    <div class="service-content">
-
-                        <h3>Web Development</h3>
-
-                        <p class="desc">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-                            doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et
-                            quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas
-                            sit aspernatur aut odit aut fugit.
-                        </p>
-
-                    </div>
-
-                </div> <!-- /service -->
-
-                <div class="service">
-
-                    <span class="icon"><i class="icon-paint-brush"></i></span>
-
-                    <div class="service-content">
-
-                        <h3>Branding</h3>
-
-                        <p class="desc">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-                            doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et
-                            quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas
-                            sit aspernatur aut odit aut fugit.
-                        </p>
-
-                    </div>
-
-                </div> <!-- /service -->
-
-                <div class="service">
-
-                    <span class="icon"><i class="icon-toggles"></i></span>
-
-                    <div class="service-content">
-
-                        <h3>UI/UX Design</h3>
-
-                        <p class="desc">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-                            doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et
-                            quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas
-                            sit aspernatur aut odit aut fugit.
-                        </p>
-
-                    </div>
-
-                </div> <!-- /service -->
-
-                <div class="service">
-
-                    <span class="icon"><i class="icon-image"></i></span>
-
-                    <div class="service-content">
-
-                        <h3>Graphics Design</h3>
-
-                        <p class="desc">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-                            doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et
-                            quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas
-                            sit aspernatur aut odit aut fugit.
-                        </p>
-
-                    </div>
-
-                </div> <!-- /service -->
-
-                <div class="service">
-
-                    <span class="icon"><i class="icon-chat"></i></span>
-
-                    <div class="service-content">
-
-                        <h3>Consultancy</h3>
-
-                        <p class="desc">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-                            doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et
-                            quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas
-                            sit aspernatur aut odit aut fugit.
-                        </p>
-
-                    </div>
-
-                </div> <!-- /service -->
-
+                </div>
+                @endforeach
             </div> <!-- /services-list -->
 
         </div> <!-- /services-content -->
@@ -855,16 +479,16 @@
         <div class="row">
             <div class="col-twelve">
 
-                <div class="block-1-6 block-s-1-3 block-tab-1-2 block-mob-full stats-list">
+                <div class="stats-list">
 
-                    <div class="bgrid stat">
+                    <div class="stat">
 
                         <div class="icon-part">
                             <i class="icon-pencil-ruler"></i>
                         </div>
 
                         <h3 class="stat-count">
-                            1500
+                            10
                         </h3>
 
                         <h5 class="stat-title">
@@ -873,14 +497,14 @@
 
                     </div> <!-- /stat -->
 
-                    <div class="bgrid stat">
+                    <div class="stat">
 
                         <div class="icon-part">
                             <i class="icon-users"></i>
                         </div>
 
                         <h3 class="stat-count">
-                            900
+                            5
                         </h3>
 
                         <h5 class="stat-title">
@@ -889,7 +513,7 @@
 
                     </div> <!-- /stat -->
 
-                    <div class="bgrid stat">
+                    {{-- <div class="stat">
 
                         <div class="icon-part">
                             <i class="icon-badge"></i>
@@ -903,16 +527,16 @@
                             Awards Received
                         </h5>
 
-                    </div> <!-- /stat -->
+                    </div> <!-- /stat --> --}}
 
-                    <div class="bgrid stat">
+                    <div class="stat">
 
                         <div class="icon-part">
                             <i class="icon-light-bulb"></i>
                         </div>
 
                         <h3 class="stat-count">
-                            120
+                            2
                         </h3>
 
                         <h5 class="stat-title">
@@ -921,7 +545,7 @@
 
                     </div> <!-- /stat -->
 
-                    <div class="bgrid stat">
+                    <div class="stat">
 
                         <div class="icon-part">
                             <i class="icon-cup"></i>
@@ -937,7 +561,7 @@
 
                     </div> <!-- /stat -->
 
-                    <div class="bgrid stat">
+                    <div class="stat">
 
                         <div class="icon-part">
                             <i class="icon-clock"></i>
@@ -971,8 +595,7 @@
                 <h5>Contact</h5>
                 <h1>I'd Love To Hear From You.</h1>
 
-                <p class="lead">Lorem ipsum Do commodo in proident enim in dolor cupidatat adipisicing dolore officia
-                    nisi aliqua incididunt Ut veniam lorem ipsum Consectetur ut in in eu do.</p>
+                <p class="lead">Feel free to reach out for collaborations, inquiries, or any web development needs. Let’s work together to bring your ideas to life and create something amazing!</p>
 
             </div>
         </div> <!-- /section-intro -->
@@ -1083,11 +706,12 @@
             <div class="col-six tab-full pull-right social">
 
                 <ul class="footer-social">
-                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                    <li><a href="#"><i class="fa fa-behance"></i></a></li>
-                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                    <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                    <li><a target="_blank" href="https://facebook.com/iamgrsagor"><i class="fa-brands fa-facebook-f"></i></a></li>
+                    <li><a target="_blank" href="https://github.com/grsagor"><i class="fa-brands fa-github"></i></a></li>
+                    <li><a target="_blank" href="https://www.linkedin.com/in/iamgrsagor/"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                    <li><a target="_blank" href="https://medium.com/@iamgrsagor"><i class="fa-brands fa-medium"></i></a></li>
+                    <li><a target="_blank" href="https://dev.to/iamgrsagor"><i class="fa-brands fa-dev"></i></a></li>
+                    <li><a target="_blank" href="https://x.com/iamgrsagor"><i class="fa-brands fa-x-twitter"></i></a></li>
                 </ul>
 
             </div>

@@ -33,7 +33,7 @@
  * ------------------------------------------------------------------- 
  */
 @import url("fonts.css");
-@import url("font-awesome/css/font-awesome.min.css");
+@import url("font-awesome/css/all.min.css");
 @import url("micons/micons.css");
 
 
@@ -941,17 +941,12 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 	margin: 6rem 0 3rem;
 }
 .skill-bars li {
-	height: .6rem;
-	background: #a1a1a1;
 	width: 100%;
-	margin-bottom: 6rem;
+	margin-bottom: 2rem;
 	padding: 0;
 	position: relative;
 }
 .skill-bars li strong {
-	position: absolute;
-	left: 0;
-	top: -3rem;
 	font-family: "poppins-bold", sans-serif;
 	color: #313131;
 	text-transform: uppercase;
@@ -1897,6 +1892,8 @@ header .logo a {
 }
 .popup-modal .media {
 	position: relative;
+	max-height: 300px;
+	overflow: auto;
 }
 .popup-modal img {
 	vertical-align: bottom;
