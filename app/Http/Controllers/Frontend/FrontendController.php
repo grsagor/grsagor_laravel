@@ -3,15 +3,19 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Validator;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Session;
 
 class FrontendController extends Controller
 {
     public function index() {
         $technologies = [
+            (object)['name' => 'Laravel', 'skill' => '99.99'],
             (object)['name' => 'ReactJS', 'skill' => '90'],
             (object)['name' => 'Next.js', 'skill' => '85'],
-            (object)['name' => 'Laravel', 'skill' => '70'],
             (object)['name' => 'PHP', 'skill' => '75'],
             (object)['name' => 'Wordpress', 'skill' => '60'],
             (object)['name' => 'WooCommerce & WordPress Development', 'skill' => '55'],
@@ -56,5 +60,81 @@ class FrontendController extends Controller
             'services' => $services,
         ];
         return view('front.pages.home.index', $data);
+    }
+    public function registration() {
+        App::setLocale(Session::get('language'));
+        return view('auth.registration');
+    }
+
+    public function login() {
+        App::setLocale(Session::get('language'));
+        return view('auth.login');
+    }
+
+    public function forgotPassword() {
+        App::setLocale(Session::get('language'));
+        return view('auth.forgotPassword');
+    }
+
+    public function resetOtpSend(Request $request){
+
+        if(User::where('email', $request->email)->exists()){
+            $email = $request->email;
+            $otps = random_int(100000, 999999);
+            $subject = 'Password Reset';
+            $data['user'] = User::where('email', $request->email)->first();
+            $data['otp'] = $otps;
+            $data['message'] = 'Your confirmation code is below — enter it in your open browser window and we will help you get changed password. Please do not share the code others';
+            Helper::sendEmail($email, $subject, $data, 'resetpassword');
+
+            $otp = new Otp();
+            $otp->email = $request->email;
+            $otp->otp = $otps;
+            $otp->save();
+
+            return view('auth.otp', compact('email'));
+        }else{
+            return redirect()->back()->withErrors(['message' => 'There is no account with this email!']);
+        }
+    }
+
+    public function otp(Request $request) {
+        App::setLocale(Session::get('language'));
+        if ($request->email && $request->otp) {
+            Validator::make($request->all(), [
+                'email' => 'required',
+                'otp' => 'required',
+                'password' => 'required',
+                'password_confirmation' => 'required_with:password|same:password|min:6',
+            ]);
+
+            if (Helper::checkotp($request->email, $request->otp)) {
+                $email = $request->email;
+                $user = User::where('email', $request->email)->first();
+                $user->password = Hash::make($request->password);
+                if ($user->save()) {
+                    $otp = Otp::where('email', $request->email)->where('otp', $request->otp)->first();
+                    $otp->status = 1;
+                    $otp->save();
+                    return redirect()->route('admin')->with(['message' => 'Password changed successfully!']);
+                }else{
+                    return view('auth.otp', compact('email'))->with(['message' => 'OTP invalid or expaired!']);
+                }
+            }else{
+                return view('auth.otp', compact('email'))->with(['message' => 'OTP invalid or expaired!']);
+            }
+        }else{
+            return view('auth.otp');
+        }
+    }
+    
+    public function changeLanguage(Request $request){
+        $language = $request->input('language');
+        Session::put('language', $language);
+        return true;
+    }
+
+    public function catchAll(){
+        return view('frontend.pages.error');
     }
 }
