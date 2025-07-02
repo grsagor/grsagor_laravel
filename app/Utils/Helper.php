@@ -16,7 +16,7 @@ class Helper
         if ($role_id != null) {
             $role = $role_id;
         } else {
-            $role = Auth::user()->role;
+            $role = Auth::user()->role_id;
         }
         $right = Right::where('name', $right)->first();
         if ($right && RoleRight::where('role_id', $role)->where('right_id', $right->id)->where('permission', 1)->exists()) {

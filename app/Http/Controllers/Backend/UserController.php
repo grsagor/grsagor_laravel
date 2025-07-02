@@ -106,7 +106,7 @@ class UserController extends Controller
         $user->last_name = $request->last_name;
         $user->email = $request->email;
         $user->phone = $request->phone;
-        $user->role  = $request->role;
+        $user->role_id  = $request->role_id;
         $user->password  = Hash::make($request->password ?? $request->phone);
         if ($user->save()) {
             return response()->json([
@@ -135,7 +135,7 @@ class UserController extends Controller
         $user->last_name = $request->last_name ?? $user->last_name;
         $user->email = $request->email;
         $user->phone = $request->phone ?? $user->phone;
-        $user->role  = $request->role ?? $user->role;
+        $user->role_id  = $request->role_id ?? $user->role_id;
         $user->status  = ($request->status) ? 1 : 0;
         $user->password  = (!empty($request->password)) ? Hash::make($request->password) : $user->password;
         if ($user->save()) {

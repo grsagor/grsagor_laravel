@@ -46,7 +46,7 @@ class LoginController extends Controller
         $user->last_name = $request->last_name;
         $user->email = $request->email;
         $user->phone = $request->phone_no;
-        $user->role  = ($request->type) ? Role::where('name', $request->type)->first()->id : 0;
+        $user->role_id  = ($request->type) ? Role::where('name', $request->type)->first()->id : 0;
         $user->password  = Hash::make($request->password);
         $user->status  = 0;
         if($user->save()){
@@ -107,12 +107,12 @@ class LoginController extends Controller
                     }
                 }
                 // Authentication passed...
-                $authUser = Auth()->user()->role;
+                $authUser = Auth()->user()->role_id;
 
                 if ($authUser == 1) {
                     return redirect()->route('admin.index');
                 }else{
-                    return redirect()->route('home');
+                    return redirect()->route('admin.index');
                 }
             }else{
                 return redirect()->back()->withErrors(['error' => 'Invalid credentials.']);

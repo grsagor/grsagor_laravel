@@ -42,7 +42,7 @@
                 <select name="role" class="form-control" required>
                     <option value="">Select</option>
                     @foreach (App\Models\Role::all() as $item)
-                        <option @if ($user->role == $item->id) selected @endif value="{{$item->id}}">{{$item->name}}</option>
+                        <option @if ($user->role_id == $item->id) selected @endif value="{{$item->id}}">{{$item->name}}</option>
                     @endforeach
                 </select>
             </div>
