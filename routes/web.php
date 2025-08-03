@@ -9,8 +9,15 @@ use App\Http\Controllers\Backend\SettingController;
 use App\Http\Controllers\Backend\SkillController;
 use Illuminate\Support\Facades\Route;
 
-Route::controller(FrontendController::class)->group(function() {
-    Route::get('/', 'index')->name('front.index');
+Route::controller(FrontendController::class)->group(function () {
+    Route::get('/', 'index')->name('front.index');                      // Home page
+    Route::get('/about', 'about')->name('front.about');                // About page
+    Route::get('/projects', 'projects')->name('front.projects');       // Projects page
+    Route::get('/blog', 'blog')->name('front.blog');                   // Blog listing
+    Route::get('/blog/{slug}', 'blogShow')->name('front.blog.show');   // Single blog post
+    Route::get('/contact', 'contact')->name('front.contact');          // Contact page
+    Route::post('/contact', 'contactSubmit')->name('front.contact.submit'); // Contact form submit
+    Route::get('/old-home', 'indexOld')->name('front.index.old');      // Optional old homepage
 });
 
 Route::controller(FrontendController::class)->group(function(){

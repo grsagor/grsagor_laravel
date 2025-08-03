@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Skill;
 use Illuminate\Support\Facades\Validator;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -11,7 +12,66 @@ use Illuminate\Support\Facades\Session;
 
 class FrontendController extends Controller
 {
-    public function index() {
+    public function index()
+    {
+        $skills = Skill::all();
+        $data = [
+            'skills' => $skills,
+        ];
+        // return $data;
+        return view('front.pages.home.index', $data);
+    }
+    public function about()
+    {
+        return view('front.pages.about.index');
+    }
+
+    public function projects()
+    {
+        $projects = Project::all();
+        return view('front.pages.projects.index', compact('projects'));
+    }
+
+    public function blog()
+    {
+        $posts = Post::latest()->paginate(5);
+        return view('front.pages.blog.index', compact('posts'));
+    }
+
+    public function blogShow($slug)
+    {
+        $post = Post::where('slug', $slug)->firstOrFail();
+        return view('front.pages.blog.show', compact('post'));
+    }
+
+    public function contact()
+    {
+        return view('front.pages.contact.index');
+    }
+
+    public function contactSubmit(Request $request)
+    {
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required|email',
+            'message' => 'required'
+        ]);
+
+        // Handle email or save logic here
+
+        return redirect()->route('front.contact')->with('success', 'Message sent successfully!');
+    }
+
+
+
+
+
+
+
+
+
+    public function indexOld()
+    {
         $technologies = [
             (object)['name' => 'Laravel', 'skill' => '99.99'],
             (object)['name' => 'ReactJS', 'skill' => '90'],
@@ -59,26 +119,30 @@ class FrontendController extends Controller
             'technologies' => $technologies,
             'services' => $services,
         ];
-        return view('front.pages.home.index', $data);
+        return view('front-bk.pages.home.index', $data);
     }
-    public function registration() {
+    public function registration()
+    {
         App::setLocale(Session::get('language'));
         return view('auth.registration');
     }
 
-    public function login() {
+    public function login()
+    {
         App::setLocale(Session::get('language'));
         return view('auth.login');
     }
 
-    public function forgotPassword() {
+    public function forgotPassword()
+    {
         App::setLocale(Session::get('language'));
         return view('auth.forgotPassword');
     }
 
-    public function resetOtpSend(Request $request){
+    public function resetOtpSend(Request $request)
+    {
 
-        if(User::where('email', $request->email)->exists()){
+        if (User::where('email', $request->email)->exists()) {
             $email = $request->email;
             $otps = random_int(100000, 999999);
             $subject = 'Password Reset';
@@ -93,12 +157,13 @@ class FrontendController extends Controller
             $otp->save();
 
             return view('auth.otp', compact('email'));
-        }else{
+        } else {
             return redirect()->back()->withErrors(['message' => 'There is no account with this email!']);
         }
     }
 
-    public function otp(Request $request) {
+    public function otp(Request $request)
+    {
         App::setLocale(Session::get('language'));
         if ($request->email && $request->otp) {
             Validator::make($request->all(), [
@@ -117,24 +182,26 @@ class FrontendController extends Controller
                     $otp->status = 1;
                     $otp->save();
                     return redirect()->route('admin')->with(['message' => 'Password changed successfully!']);
-                }else{
+                } else {
                     return view('auth.otp', compact('email'))->with(['message' => 'OTP invalid or expaired!']);
                 }
-            }else{
+            } else {
                 return view('auth.otp', compact('email'))->with(['message' => 'OTP invalid or expaired!']);
             }
-        }else{
+        } else {
             return view('auth.otp');
         }
     }
-    
-    public function changeLanguage(Request $request){
+
+    public function changeLanguage(Request $request)
+    {
         $language = $request->input('language');
         Session::put('language', $language);
         return true;
     }
 
-    public function catchAll(){
+    public function catchAll()
+    {
         return view('frontend.pages.error');
     }
 }

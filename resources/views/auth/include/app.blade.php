@@ -9,7 +9,7 @@
     <meta name="author" content="" />
     <title>Login - {{ Helper::getSettings('application_name') }}</title>
     <link href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" />
-    <link href="{{ asset('assets/auth/css/style.css') }}" rel="stylesheet" />
+    <link href="{{ asset('assets-bk/auth/css/style.css') }}" rel="stylesheet" />
     <link href="{{ asset('uploads/settings/' . Helper::getSettings('site_favicon')) }}" rel="icon">
 </head>
 
@@ -18,7 +18,7 @@
         <div class="col-lg-4 layoutAuthentication_content-wrapper">
             <div class="text-center">
                 <img class="logo-admin"
-                    src="{{ Helper::getSettings('site_logo') ? asset('uploads/settings/' . Helper::getSettings('site_logo')) : asset('assets/img/Logo.png') }}"
+                    src="{{ Helper::getSettings('site_logo') ? asset('uploads/settings/' . Helper::getSettings('site_logo')) : asset('assets-bk/img/Logo.png') }}"
                     alt="">
             </div>
             @yield('content')

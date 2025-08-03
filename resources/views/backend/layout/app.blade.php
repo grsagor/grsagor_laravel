@@ -19,10 +19,10 @@
     <link rel="stylesheet" href="{{ asset('vendor/fontawesome/css/all.min.css') }}">
     <link href="{{ asset('vendor/toastr/toastr.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('vendor/datatable/jquery.dataTables.min.css') }}" rel="stylesheet" />
-    <link rel="stylesheet" href="{{ asset('assets/vendor/summernote/summernote.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets-bk/vendor/summernote/summernote.min.css') }}">
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <link href="{{ asset('vendor/datepicker/bootstrap-datepicker3.min.css') }}" rel="stylesheet" />
-    <link href="{{ asset('assets/backend/css/style.css') }}" rel="stylesheet" />
+    <link href="{{ asset('assets-bk/backend/css/style.css') }}" rel="stylesheet" />
     <link rel="shortcut icon" href="{{ asset(Helper::getSettings('site_favicon')) }}" />
     @yield('css')
 </head>
@@ -39,7 +39,7 @@
         </div>
     </div>
     <script src="{{ asset('vendor/bootstrap/js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('assets/backend/js/scripts.js') }}"></script>
+    <script src="{{ asset('assets-bk/backend/js/scripts.js') }}"></script>
     <script src="{{ asset('vendor/jQuery/jquery.min.js') }}"></script>
     <script src="{{ asset('vendor/toastr/toastr.min.js') }}"></script>
     <script src="{{ asset('vendor/datatable/jquery.dataTables.min.js') }}"></script>
@@ -47,7 +47,7 @@
     <script src="{{ asset('vendor/sweetalert2/sweetalert2.js') }}"></script>
     <script src="{{ asset('vendor/datepicker/bootstrap-datepicker.min.js') }}"></script>
     <script src="{{ asset('vendor/validator/validator.js') }}"></script>
-    <script src="{{ asset('assets/backend/js/crud-handler.js') }}"></script>
+    <script src="{{ asset('assets-bk/backend/js/crud-handler.js') }}"></script>
 
 
     <script>

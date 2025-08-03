@@ -9,8 +9,8 @@
     <meta name="author" content="" />
     <title>Login - {{ Helper::getSettings('application_name') }}</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-    <link href="{{ asset('assets/css/backend/styles.css') }}" rel="stylesheet" />
-    <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet" />
+    <link href="{{ asset('assets-bk/css/backend/styles.css') }}" rel="stylesheet" />
+    <link href="{{ asset('assets-bk/css/style.css') }}" rel="stylesheet" />
     <link href="{{ asset('uploads/settings/'.Helper::getSettings('site_favicon')) }}" rel="icon">
 </head>
 
@@ -20,7 +20,7 @@
             <div class="row content_middle">
                 <div class="col-lg-4 layoutAuthentication_content-wrapper">
                     <div class="text-center">
-                        <img class="logo-admin" src="{{ Helper::getSettings('site_logo') ? asset('uploads/settings/'.Helper::getSettings('site_logo')) : asset('assets/img/Logo.png')}}" alt="">
+                        <img class="logo-admin" src="{{ Helper::getSettings('site_logo') ? asset('uploads/settings/'.Helper::getSettings('site_logo')) : asset('assets-bk/img/Logo.png')}}" alt="">
                     </div>
                     <div class="border-0 rounded-lg">
                         <h3 class="text-center my-4">{{ trans('language.label_reset_password') }}</h3>
@@ -55,9 +55,9 @@
             </div>
         </div>
     </div>
-    <script src="{{ asset('assets/js/backend/bootstrap.bundle.min.js') }}" crossorigin="anonymous"></script>
+    <script src="{{ asset('assets-bk/js/backend/bootstrap.bundle.min.js') }}" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/7e596160a4.js" crossorigin="anonymous"></script>
-    <script src="{{ asset('assets/js/backend/scripts.js') }}"></script>
+    <script src="{{ asset('assets-bk/js/backend/scripts.js') }}"></script>
 </body>
 
 </html>

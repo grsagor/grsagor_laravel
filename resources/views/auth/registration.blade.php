@@ -5,7 +5,7 @@
 <div class="container-register">
     <div id="register" class="row">
         <div class="img-container">
-            <img src="{{ asset('assets/img/login.png') }}" alt="">
+            <img src="{{ asset('assets-bk/img/login.png') }}" alt="">
             <div class="img-text">
                 <h1 class="applicant">{{ Helper::getSettings('application_name') }}</h1>
                 <p class="para">Premium Grade work-holding equipment and components, optimizing your machine tools for peak performance.</p>

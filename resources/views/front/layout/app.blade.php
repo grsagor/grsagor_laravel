@@ -1,34 +1,35 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en">
+<html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <title>iamgrsagor</title>
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link rel="stylesheet" href="{{ asset('assets/css/base.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/vendor.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
-    
-    <script src="{{ asset('assets/js/modernizr.js') }}"></script>
-    <script src="{{ asset('assets/js/pace.min.js') }}"></script>
+    <meta charset="UTF-8">
+    <title>@yield('title')</title>
 
+    {{-- Vendors Started --}}
+    <link href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ asset('vendor/fontawesome/css/all.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('vendor/swiper/swiper-bundle.min.css') }}">
+    {{-- Vendors Ended --}}
+
+    @stack('styles')
 </head>
 
-<body id="top">
-
-    
-    @include('front.layout.header')
-    @yield('content')
-    @include('front.layout.footer')
+<body>
     @include('front.layout.preloader')
+    @include('front.layout.header')
 
-    <script src="{{ asset('assets/js/jquery-2.1.3.min.js') }}"></script>
-    <script src="{{ asset('assets/js/plugins.js') }}"></script>
-    <script src="{{ asset('assets/js/main.js') }}"></script>
+    <main>
+        @yield('content')
+    </main>
 
+    @include('front.layout.footer')
+
+    {{-- Vendor Starts --}}
+    <script src="{{ asset('vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('vendor/jQuery/jquery.min.js') }}"></script>
+    <script src="{{ asset('vendor/swiper/swiper-bundle.min.js') }}"></script>
+    {{-- Vendor End --}}
+    @stack('scripts')
 </body>
 
 </html>

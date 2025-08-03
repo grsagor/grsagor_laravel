@@ -15,7 +15,7 @@
                     <label class="w-100 h-100 rounded-circle border overflow-hidden bg-blue-100 cursor-pointer"
                         for="edit_profile_image">
                         <img class="w-100 h-100 object-fit-cover preview_image"
-                            src="{{ $example->profile_image ? asset($example->profile_image) : asset('assets/img/no-img.jpg') }}" alt="">
+                            src="{{ $example->profile_image ? asset($example->profile_image) : asset('assets-bk/img/no-img.jpg') }}" alt="">
                         <div class="position-absolute top-50 start-50 translate-middle">@include('icons.no-image')
                         </div>
                     </label>

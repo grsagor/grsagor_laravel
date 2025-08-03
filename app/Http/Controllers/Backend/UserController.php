@@ -57,7 +57,7 @@ class UserController extends Controller
         return Datatables::of($data)
 
         ->editColumn('profile_image', function ($row) {
-            return ($row->profile_image) ? '<img class="profile-img" src="'.asset('uploads/user-images/'.$row->profile_image).'" alt="profile image">' : '<img class="profile-img" src="'.asset('assets/img/no-img.jpg').'" alt="profile image">';
+            return ($row->profile_image) ? '<img class="profile-img" src="'.asset('uploads/user-images/'.$row->profile_image).'" alt="profile image">' : '<img class="profile-img" src="'.asset('assets-bk/img/no-img.jpg').'" alt="profile image">';
         })
 
         ->editColumn('first_name', function ($row) {

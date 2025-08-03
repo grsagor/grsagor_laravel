@@ -18,7 +18,7 @@
 
                 <div class="bgrid folio-item">
                     <div class="item-wrap">
-                        <img src="{{ asset('assets/images/portfolio/abmgsac.png') }}" alt="Liberty">
+                        <img src="{{ asset('assets-bk/images/portfolio/abmgsac.png') }}" alt="Liberty">
                         <a href="#modal-01" class="overlay">
                             <div class="folio-item-table">
                                 <div class="folio-item-cell">
@@ -33,7 +33,7 @@
                 </div>
                 <div class="bgrid folio-item">
                     <div class="item-wrap">
-                        <img src="{{ asset('assets/images/portfolio/unipuler.png') }}" alt="Liberty">
+                        <img src="{{ asset('assets-bk/images/portfolio/unipuler.png') }}" alt="Liberty">
                         <a href="#modal-02" class="overlay">
                             <div class="folio-item-table">
                                 <div class="folio-item-cell">
@@ -50,7 +50,7 @@
                 <div id="modal-01" class="popup-modal slider mfp-hide">
 
                     <div class="media">
-                        <img src="{{ asset('assets/images/portfolio/modals/abmgsac.png') }}" alt="" />
+                        <img src="{{ asset('assets-bk/images/portfolio/modals/abmgsac.png') }}" alt="" />
                     </div>
 
                     <div class="description-box">
@@ -70,7 +70,7 @@
                 <div id="modal-02" class="popup-modal slider mfp-hide">
 
                     <div class="media">
-                        <img src="{{ asset('assets/images/portfolio/modals/unipuler.png') }}" alt="" />
+                        <img src="{{ asset('assets-bk/images/portfolio/modals/unipuler.png') }}" alt="" />
                     </div>
 
                     <div class="description-box">

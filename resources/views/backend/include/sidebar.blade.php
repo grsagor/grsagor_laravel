@@ -2,7 +2,7 @@
 
     <div class="user_profile">
         <img class="profile-image"
-            src="{{ Auth::user()->profile_image ? asset(Auth::user()->profile_image) : asset('assets/utils/images/no-img.jpg') }}"
+            src="{{ Auth::user()->profile_image ? asset(Auth::user()->profile_image) : asset('assets-bk/utils/images/no-img.jpg') }}"
             alt="">
 
         <div class="profile-title">{{ Auth::user()->first_name }} {{ Auth::user()->last_name }}</div>

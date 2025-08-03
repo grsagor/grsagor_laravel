@@ -1,11 +1,11 @@
 @extends('front.layout.app')
+
+@section('title', 'Home')
+
 @section('content')
-    @include('front.pages.home.sections.intro')
-    @include('front.pages.home.sections.about')
-    @include('front.pages.home.sections.resume')
-    @include('front.pages.home.sections.portfolio')
-    {{-- @include('front.pages.home.sections.cta') --}}
-    @include('front.pages.home.sections.services')
-    @include('front.pages.home.sections.stats')
-    @include('front.pages.home.sections.contact')
+  @include('front.pages.home.sections.hero')
+  @include('front.pages.home.sections.features')
+  @include('front.pages.home.sections.products')
+  @include('front.pages.home.sections.skills')
+  @include('front.pages.home.sections.testimonials')
 @endsection

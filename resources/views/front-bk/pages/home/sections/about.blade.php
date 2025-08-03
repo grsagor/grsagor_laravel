@@ -4,7 +4,7 @@
             <h5>About</h5>
             <h1>Let me introduce myself.</h1>
             <div class="intro-info">
-                <img src="{{ asset('assets/images/profile-pic.jpg') }}" alt="Profile Picture">
+                <img src="{{ asset('assets-bk/images/profile-pic.jpg') }}" alt="Profile Picture">
                 <p class="lead">I am deeply passionate about software engineering, thriving in the ever-evolving
                     world of technology. Debugging is one of my greatest joys; I approach every issue as a challenge
                     waiting to be unraveled, often finding solutions where others see dead ends.

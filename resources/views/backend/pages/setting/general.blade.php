@@ -25,14 +25,14 @@
                         <label for="" class="col-sm-3 col-form-label">Site Logo:</label>
                         <div class="col-sm-9" >
                             <input type="file" class="form-control" onchange="previewFile('settingForm #site_logo', 'settingForm .site_logo_image')" name="site_logo" id="site_logo">
-                            <img src="{{ Helper::getSettings('site_logo') ? asset(Helper::getSettings('site_logo')) : asset('assets/utils/images/no-img.jpg')}}" height="80px" width="100px" class="site_logo_image mt-1 border" alt="">
+                            <img src="{{ Helper::getSettings('site_logo') ? asset(Helper::getSettings('site_logo')) : asset('assets-bk/utils/images/no-img.jpg')}}" height="80px" width="100px" class="site_logo_image mt-1 border" alt="">
                         </div>
                     </div>
                     <div class="form-group  row">
                         <label for="" class="col-sm-3 col-form-label">Site Favicon:</label>
                         <div class="col-sm-9" >
                             <input type="file" class="form-control" onchange="previewFile('settingForm #site_favicon', 'settingForm .site_favicon_image')" name="site_favicon" id="site_favicon">
-                            <img src="{{ Helper::getSettings('site_favicon') ? asset(Helper::getSettings('site_favicon')) : asset('assets/utils/images/no-img.jpg')}}" height="80px" width="80px" class="site_favicon_image mt-1 border" alt="">
+                            <img src="{{ Helper::getSettings('site_favicon') ? asset(Helper::getSettings('site_favicon')) : asset('assets-bk/utils/images/no-img.jpg')}}" height="80px" width="80px" class="site_favicon_image mt-1 border" alt="">
                         </div>
                     </div>
                     <div class="form-group row">

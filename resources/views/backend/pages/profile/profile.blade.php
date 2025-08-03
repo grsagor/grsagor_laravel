@@ -11,7 +11,7 @@
                         <form action="{{ route('admin.profile.update') }}" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="form-floating mb-3 text-center">
-                                <img class="border-redius-50 preview_img" src="{{ ($user->profile_image) ? asset($user->profile_image) :  asset('assets/utils/images/no-img.jpg')}}" alt="profile image" height="80px" width="80px">
+                                <img class="border-redius-50 preview_img" src="{{ ($user->profile_image) ? asset($user->profile_image) :  asset('assets-bk/utils/images/no-img.jpg')}}" alt="profile image" height="80px" width="80px">
                             </div>
 
                             <div class="form-group mb-3">

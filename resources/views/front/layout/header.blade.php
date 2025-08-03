@@ -1,20 +1,34 @@
 <header>
-    <div class="row">
-        <div class="top-bar">
-            <a class="menu-toggle" href="#"><span>Menu</span></a>
-            <div class="logo">
-                <a class="smoothscroll" href="#intro">iamgrsagor</a>
-            </div>
-            <nav id="main-nav-wrap">
-                <ul class="main-navigation">
-                    <li class="current"><a class="smoothscroll" href="#intro" title="">Home</a></li>
-                    <li><a class="smoothscroll" href="#about" title="">About</a></li>
-                    <li><a class="smoothscroll" href="#resume" title="">Resume</a></li>
-                    <li><a class="smoothscroll" href="#portfolio" title="">Portfolio</a></li>
-                    <li><a class="smoothscroll" href="#services" title="">Services</a></li>
-                    <li><a class="smoothscroll" href="#contact" title="">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="{{ route('front.index') }}">iamgrsagor</a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" href="{{ route('front.index') }}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ route('front.about') }}">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#resume">Resume</a> {{-- Replace with route or section --}}
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ route('front.projects') }}">Portfolio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#services">Services</a> {{-- Replace with route or section --}}
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ route('front.contact') }}">Contact</a>
+          </li>
+        </ul>
+      </div>
     </div>
+  </nav>
 </header>

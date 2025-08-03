@@ -17,7 +17,7 @@
                             <div class="profile_image_input--container position-relative">
                                 <label class="w-100 h-100 rounded-circle border overflow-hidden bg-blue-100 cursor-pointer" for="profile_image">
                                     <img class="w-100 h-100 object-fit-cover preview_image"
-                                        src="{{ asset('assets/img/no-img.jpg') }}" alt="">
+                                        src="{{ asset('assets-bk/img/no-img.jpg') }}" alt="">
                                         <div class="position-absolute top-50 start-50 translate-middle">@include('icons.no-image')</div>
                                 </label>
                                 <div
