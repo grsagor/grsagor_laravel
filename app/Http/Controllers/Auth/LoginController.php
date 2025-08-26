@@ -158,12 +158,11 @@ class LoginController extends Controller
         }
 
         $user = User::find(Auth::user()->id);
-        $user->first_name = $request->first_name;
-        $user->last_name = $request->last_name;
+        $user->name = $request->name;
         $user->phone = $request->phone;
         if($request->hasFile('profile_image')){
-            if (file_exists(public_path('uploads/user-images/'.$user->profile_image))) {
-                unlink(public_path('uploads/user-images/'.$user->profile_image));
+            if ($user->profile_image && file_exists(public_path($user->profile_image))) {
+                unlink(public_path($user->profile_image));
             }
             $image = $request->file('profile_image');
             $filename = time().uniqid().$image->getClientOriginalName();

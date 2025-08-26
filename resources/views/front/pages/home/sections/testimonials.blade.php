@@ -4,21 +4,22 @@
         <div class="swiper testimonials-swiper">
             <div class="swiper-wrapper">
 
-                <div class="swiper-slide card border-0 shadow-sm p-4">
+                @foreach ($reviews as $review)
+                    <div class="swiper-slide card border-0 shadow-sm p-4">
+                        <p class="mb-3 fst-italic">
+                            "{{ $review->review }}"
+                        </p>
+                        <h5 class="text-end mb-0">- {{ $review->reviewer->name }}</h5>
+                    </div>
+                @endforeach
+
+                {{-- <div class="swiper-slide card border-0 shadow-sm p-4">
                     <p class="mb-3 fst-italic">
                         "@iamgrsagor delivered our project ahead of schedule with clean Laravel code and solid
                         communication throughout. Highly recommend!"
                     </p>
                     <h5 class="text-end mb-0">- John Doe, CTO at StartupX</h5>
-                </div>
-
-                <div class="swiper-slide card border-0 shadow-sm p-4">
-                    <p class="mb-3 fst-italic">
-                        "Great attention to detail, solved every bug we had, and built features we didn’t even know we
-                        needed."
-                    </p>
-                    <h5 class="text-end mb-0">- Jane Smith, Product Lead at AppCorp</h5>
-                </div>
+                </div> --}}
 
             </div>
 

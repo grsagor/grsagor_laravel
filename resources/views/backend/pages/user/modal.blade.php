@@ -18,33 +18,27 @@
                         </div>
                     </div>
                     <div class="form-group  row">
-                        <label for="" class="col-sm-2 col-form-label">First Name</label>
+                        <label for="" class="col-sm-2 col-form-label">Name</label>
                         <div class="col-sm-10">
-                            <input type="text" name="first_name" class="form-control" placeholder="First name" required>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="" class="col-sm-2 col-form-label">Last Name</label>
-                        <div class="col-sm-10">
-                            <input type="text" name="last_name" class="form-control" placeholder="Last name" required>
+                            <input type="text" name="name" class="form-control" placeholder="Name" required>
                         </div>
                     </div>
                     <div class="form-group  row">
                         <label for="" class="col-sm-2 col-form-label">Email</label>
                         <div class="col-sm-10">
-                            <input type="text" name="email" class="form-control" placeholder="Email" required>
+                            <input type="text" name="email" class="form-control" placeholder="Email">
                         </div>
                     </div>
                     <div class="form-group  row">
                         <label for="" class="col-sm-2 col-form-label">Phone No.</label>
                         <div class="col-sm-10">
-                            <input type="text" name="phone" class="form-control" placeholder="Phone No." required>
+                            <input type="text" name="phone" class="form-control" placeholder="Phone No.">
                         </div>
                     </div>
                     <div class="form-group  row">
                         <label for="" class="col-sm-2 col-form-label">User Type</label>
                         <div class="col-sm-10">
-                            <select name="role" class="form-control" required>
+                            <select name="role_id" class="form-control" required>
                                 <option value="">Select</option>
                                 @foreach (App\Models\Role::all() as $item)
                                     <option value="{{$item->id}}">{{$item->name}}</option>

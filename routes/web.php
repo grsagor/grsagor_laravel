@@ -4,6 +4,7 @@ use App\Http\Controllers\Frontend\FrontendController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\ProjectController;
+use App\Http\Controllers\Backend\ReviewController;
 use App\Http\Controllers\Backend\RoleController;
 use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\Backend\SettingController;
@@ -89,6 +90,15 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
         Route::delete('/delete/{id}', 'delete')->name('delete');
     });
     Route::controller(ProjectController::class)->prefix('projects')->name('admin.projects.')->group(function () {
+        Route::get('/', 'index')->name('index');
+        Route::get('/list', 'list')->name('list');
+        Route::get('/create', 'create')->name('create');
+        Route::post('/store', 'store')->name('store');
+        Route::get('/edit/{id}', 'edit')->name('edit');
+        Route::put('/update/{id}', 'update')->name('update');
+        Route::delete('/delete/{id}', 'delete')->name('delete');
+    });
+    Route::controller(ReviewController::class)->prefix('reviews')->name('admin.reviews.')->group(function () {
         Route::get('/', 'index')->name('index');
         Route::get('/list', 'list')->name('list');
         Route::get('/create', 'create')->name('create');

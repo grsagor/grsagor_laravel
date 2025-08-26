@@ -28,7 +28,7 @@ class SettingController extends Controller
 
         foreach($request->file() as $key => $val){
             if ($request->hasFile($key)) {
-                if (file_exists(public_path(Helper::getSettings($key)))) {
+                if (Helper::getSettings($key) && file_exists(public_path(Helper::getSettings($key)))) {
                     unlink(public_path(Helper::getSettings($key)));
                 }
                 $image = $request->file($key);

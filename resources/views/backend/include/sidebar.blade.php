@@ -91,6 +91,12 @@
                         <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div> Project Management
                     </a>
                 @endif
+                @if (Helper::hasRight('dashboard.view'))
+                    <a class="nav-link {{ Route::is('admin.reviews.index') ? 'active' : '' }}"
+                        href="{{ route('admin.reviews.index') }}">
+                        <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div> Review Management
+                    </a>
+                @endif
             </div>
         </div>
     </nav>

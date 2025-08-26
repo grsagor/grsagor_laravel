@@ -1,0 +1,55 @@
+:root {
+    --primary-color: #ff5722;
+    --primary-hover-color: #e64a19;
+}
+
+.bg-primary {
+    background-color: var(--primary-color) !important;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover-color);
+    border-color: var(--primary-hover-color);
+}
+
+.hover-bg-primary:hover {
+    background-color: var(--primary-color) !important;
+}
+
+.hover-text-primary:hover {
+    color: var(--primary-color) !important;
+}
+
+.text-primary {
+    color: var(--primary-color) !important;
+}
+
+a {
+    color: var(--primary-color);
+}
+
+a:hover {
+    color: var(--primary-hover-color);
+}
+
+.navbar-brand {
+    color: var(--primary-color);
+}
+
+.navbar-brand:hover {
+    color: var(--primary-hover-color);
+}
+.hero {
+    height: auto;
+    padding: 100px 0;
+}
+@media (min-width: 991px) {
+    .hero {
+        height: 100vh;
+    }
+}

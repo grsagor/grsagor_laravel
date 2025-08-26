@@ -42,7 +42,12 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
-    public function roles(){
+    public function roles()
+    {
         return $this->belongsTo(Role::class, 'role_id', 'id');
+    }
+    public function scopeClients($query)
+    {
+        return $query->where('role_id', 2);
     }
 }

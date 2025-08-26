@@ -123,10 +123,10 @@ class ProjectController extends Controller
         try {
             $project = Project::findOrFail($id);
 
-            $image_path = '';
+            $image_path = $project->image;
             if ($request->hasFile('image')) {
-                if (file_exists(public_path('uploads/project-images/' . $project->image))) {
-                    unlink(public_path('uploads/project-images/' . $project->image));
+                if ($project->image && file_exists(public_path($project->image))) {
+                    unlink(public_path($project->image));
                 }
                 $image = $request->file('image');
                 $filename = time() . uniqid() . $image->getClientOriginalName();

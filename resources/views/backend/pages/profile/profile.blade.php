@@ -19,12 +19,8 @@
                             </div>
 
                             <div class="form-floating mb-3">
-                                <input class="form-control" type="text" name="first_name" value="{{ $user->first_name ?? '' }}" placeholder="First Name"  />
+                                <input class="form-control" type="text" name="name" value="{{ $user->name ?? '' }}" placeholder="First Name"  />
                                 <label for="inputEmail">First Name</label>
-                            </div>
-                            <div class="form-floating mb-3">
-                                <input class="form-control" type="text" name="last_name" value="{{ $user->last_name ?? '' }}" placeholder="Last Name"  />
-                                <label for="inputEmail">Last Name</label>
                             </div>
                             <div class="form-floating mb-3">
                                 <input class="form-control" id="inputEmail" type="email" name="email" placeholder="name@example.com" value="{{ $user->email }}" readonly />

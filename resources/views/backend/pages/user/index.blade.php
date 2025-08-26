@@ -65,7 +65,7 @@
         </div>
     </div>
     @include('backend.pages.user.modal')
-    @push('footer')
+    @section('script')
         <script type="text/javascript">
             function getusers(name = null, email = null, phone = null){
                 var table = jQuery('#dataTable').DataTable({
@@ -106,8 +106,8 @@
                             "className": "text-center"
                         },
                         {
-                            data: 'first_name',
-                            name: 'first_name'
+                            data: 'name',
+                            name: 'name'
                         },
                         {
                             data: 'email',
@@ -309,5 +309,5 @@
             })
 
         </script>
-    @endpush
+    @endsection
 @endsection

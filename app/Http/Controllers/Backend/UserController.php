@@ -5,11 +5,9 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Yajra\DataTables\DataTables;
-use Illuminate\Support\Facades\Validator;
-use Auth;
-use Helper;
-use Hash;
 use App\Models\User;
+use App\Utils\Helper;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -22,31 +20,30 @@ class UserController extends Controller
         $data = User::query();
         if ($request->name) {
             $data->where(function($query) use ($request){
-                $query->where('first_name','like', "%" .$request->name ."%" )
-                ->orWhere('last_name','like', "%" .$request->name ."%");
+                $query->where('name','like', "%" .$request->name ."%");
             });
         }
 
         if ($request->email) {
             $data->where(function($query) use ($request){
-                $query->where('email','like', "%" .$request->email ."%" );
+                $query->where('email','like', "%" .$request->email ."%");
             });
         }
 
         if ($request->phone) {
             $data->where(function($query) use ($request){
-                $query->where('phone','like', "%" .$request->phone ."%" );
+                $query->where('phone','like', "%" .$request->phone ."%");
             });
         }
        
         return Datatables::of($data)
 
         ->editColumn('profile_image', function ($row) {
-            return ($row->profile_image) ? '<img class="profile-img" src="'.asset('uploads/user-images/'.$row->profile_image).'" alt="profile image">' : '<img class="profile-img" src="'.asset('assets-bk/img/no-img.jpg').'" alt="profile image">';
+            return ($row->profile_image) ? '<img class="profile-img" src="'.asset($row->profile_image).'" alt="profile image">' : '<img class="profile-img" src="'.asset('assets-bk/img/no-img.jpg').'" alt="profile image">';
         })
 
-        ->editColumn('first_name', function ($row) {
-            return $row->first_name .' '.$row->last_name;
+        ->editColumn('name', function ($row) {
+            return $row->name;
         })
 
         ->editColumn('role', function ($row) {
@@ -74,21 +71,19 @@ class UserController extends Controller
             }
             return $btn;
         })
-        ->rawColumns(['profile_image','first_name','role','status','action'])->make(true);
+        ->rawColumns(['profile_image','name','role','status','action'])->make(true);
     }
 
     public function store(Request $request){
         $validator = $request->validate([
-			'first_name' => 'required',
-			'last_name' => 'required',
-			'email' => 'required|email|unique:user',
-			'phone' => 'required|unique:user',
-			'role' => 'required',
+			'name' => 'required',
+			'email' => 'nullable|email|unique:users',
+			'phone' => 'nullable|unique:users',
+			'role_id' => 'required',
 		]);
 
         $user = new User();
-        $user->first_name = $request->first_name;
-        $user->last_name = $request->last_name;
+        $user->name = $request->name;
         $user->email = $request->email;
         $user->phone = $request->phone;
         $user->role_id  = $request->role_id;
@@ -108,16 +103,12 @@ class UserController extends Controller
 
     public function update(Request $request, $id){
         $validator = $request->validate([
-			'first_name' => 'required',
-			'last_name' => 'required',
-			'email' => 'required|email',
-			'phone' => 'required',
-			'role' => 'required',
+			'name' => 'required',
+			'role_id' => 'required',
 		]);
 
         $user = User::find($id);
-        $user->first_name = $request->first_name ?? $user->first_name;
-        $user->last_name = $request->last_name ?? $user->last_name;
+        $user->name = $request->name ?? $user->name;
         $user->email = $request->email;
         $user->phone = $request->phone ?? $user->phone;
         $user->role_id  = $request->role_id ?? $user->role_id;

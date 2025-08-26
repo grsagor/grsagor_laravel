@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="{{ asset('vendor/swiper/swiper-bundle.min.css') }}">
     {{-- Vendors Ended --}}
 
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+
     @stack('styles')
 </head>
 

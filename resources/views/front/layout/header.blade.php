@@ -10,7 +10,7 @@
       <div class="collapse navbar-collapse" id="mainNavbar">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link {{ request()->routeIs('front.index') ? 'active' : '' }}" href="{{ route('front.index') }}">Home</a>
+            <a class="nav-link {{ request()->routeIs('front.index') ? 'text-primary' : '' }}" href="{{ route('front.index') }}">Home</a>
           </li>
           {{-- <li class="nav-item">
             <a class="nav-link" href="{{ route('front.about') }}">About</a>
@@ -19,7 +19,7 @@
             <a class="nav-link" href="#resume">Resume</a>
           </li> --}}
           <li class="nav-item">
-            <a class="nav-link {{ request()->routeIs('front.projects') ? 'active' : '' }}" href="{{ route('front.projects') }}">Projects</a>
+            <a class="nav-link {{ request()->routeIs('front.projects') ? 'text-primary' : '' }}" href="{{ route('front.projects') }}">Projects</a>
           </li>
           {{-- <li class="nav-item">
             <a class="nav-link" href="#services">Services</a>

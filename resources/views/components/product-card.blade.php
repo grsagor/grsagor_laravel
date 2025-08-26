@@ -6,7 +6,7 @@
         <h5 class="card-title fw-semibold">{{ $title }}</h5>
         <p class="card-text flex-grow-1 text-muted" style="min-height: 4.5rem;">{{ $description }}</p>
         @if (isset($live_link))
-            <a href="{{ $live_link }}" class="btn btn-primary mt-auto w-100">View Details</a>
+            <a href="{{ $live_link }}" target="_blank" class="btn btn-primary mt-auto w-100">Live Demo</a>
         @endif
     </div>
 </div>

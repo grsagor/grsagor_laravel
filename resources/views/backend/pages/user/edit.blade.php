@@ -13,15 +13,9 @@
             </div>
         </div>
         <div class="form-group  row">
-            <label for="" class="col-sm-2 col-form-label">First Name</label>
+            <label for="" class="col-sm-2 col-form-label">Name</label>
             <div class="col-sm-10">
-                <input type="text" name="first_name" class="form-control" placeholder="First name" value="{{ $user->first_name }}" required>
-            </div>
-        </div>
-        <div class="form-group  row">
-            <label for="" class="col-sm-2 col-form-label">Last Name</label>
-            <div class="col-sm-10">
-                <input type="text" name="last_name" class="form-control" placeholder="Last name" value="{{$user->last_name}}" required>
+                <input type="text" name="name" class="form-control" placeholder="Name" value="{{ $user->name }}" required>
             </div>
         </div>
         <div class="form-group  row">
@@ -33,13 +27,13 @@
         <div class="form-group  row">
             <label for="" class="col-sm-2 col-form-label">Phone No.</label>
             <div class="col-sm-10">
-                <input type="text" name="phone" class="form-control" placeholder="Phone No." value="{{ $user->phone }}" required>
+                <input type="text" name="phone" class="form-control" placeholder="Phone No." value="{{ $user->phone }}">
             </div>
         </div>
         <div class="form-group  row">
             <label for="" class="col-sm-2 col-form-label">User Type</label>
             <div class="col-sm-10">
-                <select name="role" class="form-control" required>
+                <select name="role_id" class="form-control" required>
                     <option value="">Select</option>
                     @foreach (App\Models\Role::all() as $item)
                         <option @if ($user->role_id == $item->id) selected @endif value="{{$item->id}}">{{$item->name}}</option>

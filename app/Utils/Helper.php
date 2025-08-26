@@ -5,8 +5,8 @@ namespace App\Utils;
 use App\Models\Right;
 use App\Models\RoleRight;
 use App\Models\Setting;
-use App\Models\Otp;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class Helper
 {
@@ -45,11 +45,11 @@ class Helper
         });
     }
 
-    public static function checkotp($email, $otp)
-    {
-        $otp = Otp::where('email', $email)->where('otp', $otp)->where('status', 0)->first();
-        if ($otp) {
-            return true;
-        }
-    }
+    // public static function checkotp($email, $otp)
+    // {
+    //     $otp = Otp::where('email', $email)->where('otp', $otp)->where('status', 0)->first();
+    //     if ($otp) {
+    //         return true;
+    //     }
+    // }
 }
