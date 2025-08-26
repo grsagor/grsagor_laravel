@@ -9,7 +9,7 @@
             image="{{asset($project->image)}}"
             title="{{ $project->title }}"
             description="{{ $project->description }}"
-            url="#"
+            live_link="{{ $project->live }}"
           />
         </div>
       @endforeach

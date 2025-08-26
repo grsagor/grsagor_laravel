@@ -3,13 +3,20 @@
 @section('title', 'Projects')
 
 @section('content')
-<section class="projects">
-  <h2>My Projects</h2>
-  @foreach ($projects as $project)
-    <div class="project">
-      <h3>{{ $project->title }}</h3>
-      <p>{{ $project->description }}</p>
-    </div>
-  @endforeach
-</section>
+    <section id="products" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Our Products</h2>
+            <div class="row g-4">
+
+                @foreach ($projects as $project)
+                    <div class="col-sm-6 col-md-4 col-lg-3">
+                        <x-product-card image="{{ asset($project->image) }}" title="{{ $project->title }}"
+                            description="{{ $project->description }}" live_link="{{ $project->live }}" />
+                    </div>
+                @endforeach
+
+            </div>
+        </div>
+    </section>
+
 @endsection

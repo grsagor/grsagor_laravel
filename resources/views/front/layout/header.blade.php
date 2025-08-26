@@ -10,23 +10,23 @@
       <div class="collapse navbar-collapse" id="mainNavbar">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" href="{{ route('front.index') }}">Home</a>
+            <a class="nav-link {{ request()->routeIs('front.index') ? 'active' : '' }}" href="{{ route('front.index') }}">Home</a>
           </li>
-          <li class="nav-item">
+          {{-- <li class="nav-item">
             <a class="nav-link" href="{{ route('front.about') }}">About</a>
-          </li>
+          </li> --}}
+          {{-- <li class="nav-item">
+            <a class="nav-link" href="#resume">Resume</a>
+          </li> --}}
           <li class="nav-item">
-            <a class="nav-link" href="#resume">Resume</a> {{-- Replace with route or section --}}
+            <a class="nav-link {{ request()->routeIs('front.projects') ? 'active' : '' }}" href="{{ route('front.projects') }}">Projects</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{ route('front.projects') }}">Portfolio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#services">Services</a> {{-- Replace with route or section --}}
-          </li>
-          <li class="nav-item">
+          {{-- <li class="nav-item">
+            <a class="nav-link" href="#services">Services</a>
+          </li> --}}
+          {{-- <li class="nav-item">
             <a class="nav-link" href="{{ route('front.contact') }}">Contact</a>
-          </li>
+          </li> --}}
         </ul>
       </div>
     </div>
