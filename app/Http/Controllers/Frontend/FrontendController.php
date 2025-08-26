@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Project;
 use App\Models\Skill;
 use Illuminate\Support\Facades\Validator;
 use App\Models\User;
@@ -15,8 +16,10 @@ class FrontendController extends Controller
     public function index()
     {
         $skills = Skill::all();
+        $projects = Project::all();
         $data = [
             'skills' => $skills,
+            'projects' => $projects,
         ];
         // return $data;
         return view('front.pages.home.index', $data);

@@ -42,7 +42,7 @@ class ProjectController extends Controller
             'client_id' => 'nullable|string|max:255',
             'title' => 'required|string|max:255',
             'description' => 'nullable|string',
-            'image' => 'required|string|max:255',
+            'image' => 'required|file|max:2048',
             'github' => 'nullable|string|max:255',
             'live' => 'nullable|string|max:255',
             'status' => 'nullable|integer',
@@ -103,9 +103,13 @@ class ProjectController extends Controller
     public function update(Request $request, $id)
     {
         $validator = Validator::make($request->all(), [
-            'name' => 'required|string|max:255',
-            'proficiency' => 'required|integer|min:0|max:100',
+            'client_id' => 'nullable|string|max:255',
+            'title' => 'required|string|max:255',
             'description' => 'nullable|string',
+            'image' => 'nullable|file|max:2048',
+            'github' => 'nullable|string|max:255',
+            'live' => 'nullable|string|max:255',
+            'status' => 'nullable|integer',
             'order' => 'nullable|integer',
         ]);
 
@@ -157,6 +161,9 @@ class ProjectController extends Controller
     {
         try {
             $project = Project::findOrFail($id);
+            if (file_exists(public_path('uploads/project-images/' . $project->image))) {
+                unlink(public_path('uploads/project-images/' . $project->image));
+            }
             $project->delete();
 
             return response()->json([

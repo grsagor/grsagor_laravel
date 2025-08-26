@@ -69,14 +69,17 @@ $(document).ready(function () {
 
     $(document).on('click', '#crud_form_submit_btn', function (e) {
         e.preventDefault();
-        let form = $('#crud_form');
-        let url = form.attr('action');
-        let method = form.attr('method');
+        let form = $('#crud_form')[0];
+        let formData = new FormData(form);
+        let url = form.action;
+        let method = form.method;
 
         $.ajax({
             url: url,
             type: method,
-            data: form.serialize(),
+            data: formData,
+            processData: false, // prevent jQuery from processing data
+            contentType: false, // prevent jQuery from setting contentType
             success: function (response) {
                 if (response.success) {
                     $('#crud_modal').modal('hide');
@@ -91,9 +94,9 @@ $(document).ready(function () {
                 // $.each(errors, function (key, value) {
                 //     toastr.error(value[0]);
                 // });
-                
+
                 let errorHtml = '<div class="alert alert-danger alert-dismissible fade show" role="alert">';
-                
+
                 if (errors) {
                     errorHtml += '<ul class="list-unstyled mb-0">';
                     $.each(errors, function (key, value) {
@@ -103,9 +106,9 @@ $(document).ready(function () {
                 } else if (xhr.responseJSON.msg) {
                     errorHtml += xhr.responseJSON.msg;
                 }
-                
+
                 errorHtml += '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';
-                
+
                 $('#crud_modal .server_side_error').html(errorHtml);
             }
         });

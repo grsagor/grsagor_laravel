@@ -47,12 +47,12 @@
                 name: 'id'
             },
             {
-                data: 'name',
-                name: 'name'
+                data: 'title',
+                name: 'title'
             },
             {
-                data: 'client',
-                name: 'client'
+                data: 'client_id',
+                name: 'client_id'
             },
             {
                 data: 'description',

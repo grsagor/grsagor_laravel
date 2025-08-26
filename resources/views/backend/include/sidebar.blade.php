@@ -88,7 +88,7 @@
                 @if (Helper::hasRight('dashboard.view'))
                     <a class="nav-link {{ Route::is('admin.projects.index') ? 'active' : '' }}"
                         href="{{ route('admin.projects.index') }}">
-                        <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div> Skill Management
+                        <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div> Project Management
                     </a>
                 @endif
             </div>
