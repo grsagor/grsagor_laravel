@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <title>@yield('title')</title>
 
+    <x-meta-tag />
+
     {{-- Vendors Started --}}
     <link href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" />
     <link rel="stylesheet" href="{{ asset('vendor/fontawesome/css/all.min.css') }}">
