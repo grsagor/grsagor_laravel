@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>@yield('title') | Make Your Website Easily With Sagor</title>
+    <title>@yield('title') | Professional Web Developer & Software Engineer</title>
 
     <x-meta-tag />
 

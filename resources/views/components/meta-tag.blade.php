@@ -1,23 +1,22 @@
 <!-- Primary Meta Tags -->
-<title>Make Your Website Easily With Sagor</title>
-<meta name="title" content="Make Your Website Easily With Sagor" />
+<meta name="title" content="Sagor | Professional Web Developer & Software Engineer" />
 <meta name="description"
-    content="Learn how to build, design, and launch your website quickly and effectively with Sagor’s easy-to-follow guidance. Perfect for beginners and pros alike." />
+    content="Hire Sagor, a skilled software engineer and web developer, to design, develop, and launch high-quality websites tailored to your business needs." />
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://grsagor.com/" />
-<meta property="og:title" content="Make Your Website Easily With Sagor" />
+<meta property="og:title" content="Sagor | Professional Web Developer & Software Engineer" />
 <meta property="og:description"
-    content="Step-by-step resources, tips, and tools to help you create and grow your own website without the hassle." />
+    content="Looking for a reliable web developer? Sagor specializes in building modern, responsive, and high-performing websites that help businesses grow online." />
 <meta property="og:image" content="{{ asset('assets/images/intro-bg.jpg') }}" />
 
 <!-- X (Twitter) -->
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:url" content="https://grsagor.com/" />
-<meta property="twitter:title" content="Make Your Website Easily With Sagor" />
+<meta property="twitter:title" content="Sagor | Professional Web Developer & Software Engineer" />
 <meta property="twitter:description"
-    content="Build and launch your website faster with Sagor’s easy methods and expert tips." />
+    content="Sagor helps businesses succeed online by creating powerful, custom-built websites. Get a professional website designed for your brand." />
 <meta property="twitter:image" content="{{ asset('assets/images/intro-bg.jpg') }}" />
 
-<!-- Meta Tags Generated with https://metatags.io -->
+<!-- Meta Tags Optimized for Client Conversion -->
