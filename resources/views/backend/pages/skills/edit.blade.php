@@ -8,7 +8,7 @@
         </div>
         <div class="modal-body">
             <div class="server_side_error"></div>
-            <form id="crud_form" action="{{ route('admin.skills.update', $skill->id) }}" method="PUT">
+            <form id="crud_form" action="{{ route('admin.skills.update', $skill->id) }}" method="POST">
                 @csrf
                 <div class="form-group">
                     <label for="name">Name</label>
