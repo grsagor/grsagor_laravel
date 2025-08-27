@@ -2,7 +2,9 @@
 
 use App\Http\Controllers\Frontend\FrontendController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Backend\BlogController;
 use App\Http\Controllers\Backend\DashboardController;
+use App\Http\Controllers\Backend\ExperienceController;
 use App\Http\Controllers\Backend\ProjectController;
 use App\Http\Controllers\Backend\ReviewController;
 use App\Http\Controllers\Backend\RoleController;
@@ -15,7 +17,7 @@ Route::controller(FrontendController::class)->group(function () {
     Route::get('/', 'index')->name('front.index');                      // Home page
     Route::get('/about', 'about')->name('front.about');                // About page
     Route::get('/projects', 'projects')->name('front.projects');       // Projects page
-    Route::get('/blog', 'blog')->name('front.blog');                   // Blog listing
+    Route::get('/blog', 'blog')->name('front.blogs');                   // Blog listing
     Route::get('/blog/{slug}', 'blogShow')->name('front.blog.show');   // Single blog post
     Route::get('/contact', 'contact')->name('front.contact');          // Contact page
     Route::post('/contact', 'contactSubmit')->name('front.contact.submit'); // Contact form submit
@@ -99,6 +101,24 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
         Route::delete('/delete/{id}', 'delete')->name('delete');
     });
     Route::controller(ReviewController::class)->prefix('reviews')->name('admin.reviews.')->group(function () {
+        Route::get('/', 'index')->name('index');
+        Route::get('/list', 'list')->name('list');
+        Route::get('/create', 'create')->name('create');
+        Route::post('/store', 'store')->name('store');
+        Route::get('/edit/{id}', 'edit')->name('edit');
+        Route::put('/update/{id}', 'update')->name('update');
+        Route::delete('/delete/{id}', 'delete')->name('delete');
+    });
+    Route::controller(BlogController::class)->prefix('blogs')->name('admin.blogs.')->group(function () {
+        Route::get('/', 'index')->name('index');
+        Route::get('/list', 'list')->name('list');
+        Route::get('/create', 'create')->name('create');
+        Route::post('/store', 'store')->name('store');
+        Route::get('/edit/{id}', 'edit')->name('edit');
+        Route::put('/update/{id}', 'update')->name('update');
+        Route::delete('/delete/{id}', 'delete')->name('delete');
+    });
+    Route::controller(ExperienceController::class)->prefix('experiences')->name('admin.experiences.')->group(function () {
         Route::get('/', 'index')->name('index');
         Route::get('/list', 'list')->name('list');
         Route::get('/create', 'create')->name('create');

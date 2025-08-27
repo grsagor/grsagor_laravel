@@ -21,6 +21,9 @@
           <li class="nav-item">
             <a class="nav-link {{ request()->routeIs('front.projects') ? 'text-primary' : '' }}" href="{{ route('front.projects') }}">Projects</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link {{ request()->routeIs('front.blogs') ? 'text-primary' : '' }}" href="{{ route('front.blogs') }}">Blogs</a>
+          </li>
           {{-- <li class="nav-item">
             <a class="nav-link" href="#services">Services</a>
           </li> --}}

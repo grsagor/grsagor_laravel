@@ -97,6 +97,18 @@
                         <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div> Review Management
                     </a>
                 @endif
+                @if (Helper::hasRight('dashboard.view'))
+                    <a class="nav-link {{ Route::is('admin.blogs.index') ? 'active' : '' }}"
+                        href="{{ route('admin.blogs.index') }}">
+                        <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div> Blog Management
+                    </a>
+                @endif
+                @if (Helper::hasRight('dashboard.view'))
+                    <a class="nav-link {{ Route::is('admin.experiences.index') ? 'active' : '' }}"
+                        href="{{ route('admin.experiences.index') }}">
+                        <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div> Experience Management
+                    </a>
+                @endif
             </div>
         </div>
     </nav>

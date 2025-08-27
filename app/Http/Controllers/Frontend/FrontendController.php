@@ -3,11 +3,11 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Blog;
+use App\Models\Experience;
 use App\Models\Project;
 use App\Models\Review;
 use App\Models\Skill;
-use Illuminate\Support\Facades\Validator;
-use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Session;
@@ -19,10 +19,14 @@ class FrontendController extends Controller
         $skills = Skill::all();
         $projects = Project::all();
         $reviews = Review::where('status', 1)->get();
+        $blogs = Blog::where('status', 1)->get();
+        $experiences = Experience::where('status', 1)->get();
         $data = [
             'skills' => $skills,
             'projects' => $projects,
             'reviews' => $reviews,
+            'blogs' => $blogs,
+            'experiences' => $experiences,
         ];
         // return $data;
         return view('front.pages.home.index', $data);
@@ -38,11 +42,11 @@ class FrontendController extends Controller
         return view('front.pages.projects.index', compact('projects'));
     }
 
-    // public function blog()
-    // {
-    //     $posts = Post::latest()->paginate(5);
-    //     return view('front.pages.blog.index', compact('posts'));
-    // }
+    public function blog()
+    {
+        $blogs = Blog::where('status', 1)->get();
+        return view('front.pages.blogs.index', compact('blogs'));
+    }
 
     // public function blogShow($slug)
     // {
