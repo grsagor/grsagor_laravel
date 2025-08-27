@@ -10,6 +10,7 @@
             <div class="server_side_error"></div>
             <form id="crud_form" action="{{ route('admin.skills.update', $skill->id) }}" method="POST">
                 @csrf
+                @method('PUT')
                 <div class="form-group">
                     <label for="name">Name</label>
                     <input type="text" class="form-control" id="name" name="name" value="{{ $skill->name }}" required>
