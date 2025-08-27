@@ -1,6 +1,6 @@
 @extends('front.layout.app')
 
-@section('title', 'Home')
+@section('title', 'Home') 
 
 @section('content')
   @include('front.pages.home.sections.hero')
