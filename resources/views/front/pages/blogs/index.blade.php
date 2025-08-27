@@ -3,5 +3,7 @@
 @section('title', 'Blog')
 
 @section('content')
-    @include('front.pages.home.sections.blogs')
+    <div class="py-5">
+        @include('front.pages.home.sections.blogs')
+    </div>
 @endsection
