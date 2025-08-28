@@ -10,4 +10,5 @@
     @include('front.pages.home.sections.products')
     @include('front.pages.home.sections.testimonials')
     @include('front.pages.home.sections.blogs')
+    @include('front.pages.home.sections.contact')
 @endsection

@@ -11,6 +11,7 @@ use App\Http\Controllers\Backend\RoleController;
 use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\Backend\SettingController;
 use App\Http\Controllers\Backend\SkillController;
+use App\Http\Controllers\Frontend\ContactController;
 use Illuminate\Support\Facades\Route;
 
 Route::controller(FrontendController::class)->group(function () {
@@ -22,6 +23,10 @@ Route::controller(FrontendController::class)->group(function () {
     Route::get('/contact', 'contact')->name('front.contact');          // Contact page
     Route::post('/contact', 'contactSubmit')->name('front.contact.submit'); // Contact form submit
     Route::get('/old-home', 'indexOld')->name('front.index.old');      // Optional old homepage
+});
+Route::controller(ContactController::class)->group(function () {
+    Route::get('/captcha', 'generateCaptcha')->name('front.generate.captcha');
+    Route::post('/contact', 'send')->name('front.contact.send');
 });
 
 Route::controller(FrontendController::class)->group(function(){

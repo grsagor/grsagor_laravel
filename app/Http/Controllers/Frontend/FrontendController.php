@@ -28,7 +28,11 @@ class FrontendController extends Controller
             'blogs' => $blogs,
             'experiences' => $experiences,
         ];
-        // return $data;
+
+        $num1 = rand(1, 10);
+        $num2 = rand(1, 10);
+        session(['captcha_answer' => $num1 + $num2]);
+        session(['captcha_question' => "$num1 + $num2 = ?"]);
         return view('front.pages.home.index', $data);
     }
     public function about()
