@@ -12,7 +12,7 @@
                 </small>
             </div>
 
-            <div class="col-md-6 text-end mb-3 mb-md-0">
+            <div class="col-md-6 text-center text-md-end mb-3 mb-md-0">
                 <ul class="list-inline mb-0">
                     <li class="list-inline-item">
                         <a href="https://facebook.com/iamgrsagor" target="_blank" rel="noopener noreferrer"

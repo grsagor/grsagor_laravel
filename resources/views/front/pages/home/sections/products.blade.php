@@ -4,7 +4,7 @@
     <div class="row">
 
       @foreach ($projects as $project)
-        <div class="col-12 col-sm-12 col-md-4 col-lg-3">
+        <div class="col-12 col-sm-12 col-md-4 col-lg-3 mb-3">
           <x-product-card
             image="{{asset($project->image)}}"
             title="{{ $project->title }}"
