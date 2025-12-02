@@ -12,3 +12,11 @@
     @include('front.pages.home.sections.blogs')
     @include('front.pages.home.sections.contact')
 @endsection
+
+@section('modals')
+    @include('front.components.project-details-modal')
+@endsection
+
+@push('scripts')
+    <script src="{{ asset('assets/js/projects.js') }}"></script>
+@endpush

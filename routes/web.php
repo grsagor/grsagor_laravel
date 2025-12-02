@@ -18,6 +18,7 @@ Route::controller(FrontendController::class)->group(function () {
     Route::get('/', 'index')->name('front.index');                      // Home page
     Route::get('/about', 'about')->name('front.about');                // About page
     Route::get('/projects', 'projects')->name('front.projects');       // Projects page
+    Route::get('/projects/{id}/details', 'projectDetails')->name('front.projects.details'); // Project details AJAX
     Route::get('/blog', 'blog')->name('front.blogs');                   // Blog listing
     Route::get('/blog/{slug}', 'blogShow')->name('front.blog.show');   // Single blog post
     Route::get('/contact', 'contact')->name('front.contact');          // Contact page

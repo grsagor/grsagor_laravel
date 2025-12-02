@@ -46,6 +46,12 @@ class FrontendController extends Controller
         return view('front.pages.projects.index', compact('projects'));
     }
 
+    public function projectDetails($id)
+    {
+        $project = Project::findOrFail($id);
+        return view('front.pages.projects.details', compact('project'));
+    }
+
     public function blog()
     {
         $blogs = Blog::where('status', 1)->get();

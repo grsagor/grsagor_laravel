@@ -29,6 +29,8 @@
 
     @include('front.layout.footer')
 
+    @yield('modals')
+
     {{-- Vendor Starts --}}
     <script src="{{ asset('vendor/bootstrap/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('vendor/jQuery/jquery.min.js') }}"></script>

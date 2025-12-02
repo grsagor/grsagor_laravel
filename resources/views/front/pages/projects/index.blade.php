@@ -11,7 +11,8 @@
                 @foreach ($projects as $project)
                     <div class="col-sm-6 col-md-4 col-lg-3">
                         <x-product-card image="{{ asset($project->image) }}" title="{{ $project->title }}"
-                            description="{{ $project->description }}" live_link="{{ $project->live }}" />
+                            description="{{ $project->description }}" live_link="{{ $project->live }}" 
+                            github_link="{{ $project->github }}" project_id="{{ $project->id }}" />
                     </div>
                 @endforeach
 
@@ -20,3 +21,11 @@
     </section>
 
 @endsection
+
+@section('modals')
+    @include('front.components.project-details-modal')
+@endsection
+
+@push('scripts')
+    <script src="{{ asset('assets/js/projects.js') }}"></script>
+@endpush

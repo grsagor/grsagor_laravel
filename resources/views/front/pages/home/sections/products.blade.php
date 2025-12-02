@@ -7,6 +7,7 @@
         <div class="col-12 col-sm-12 col-md-4 col-lg-3 mb-3">
           <x-product-card
             image="{{asset($project->image)}}"
+            project_id="{{ $project->id }}"
             title="{{ $project->title }}"
             description="{{ $project->description }}"
             live_link="{{ $project->live }}"
