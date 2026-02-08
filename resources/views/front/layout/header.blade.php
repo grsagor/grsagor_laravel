@@ -1,5 +1,5 @@
-<header id="mainHeader">
-  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top border-bottom">
+<header id="mainHeader" style="position: sticky; top: 0; z-index: 1030;">
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm border-bottom">
     <div class="container">
       <a class="navbar-brand fw-bold fs-3" href="{{ route('front.index') }}">
         <span class="text-primary">iam</span>grsagor
