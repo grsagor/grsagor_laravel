@@ -1189,3 +1189,203 @@ a, button, input, textarea, select {
     background-color: var(--primary-color);
     color: var(--text-light);
 }
+
+/* ============================================
+   MODERN PAGINATION STYLES
+   ============================================ */
+.modern-pagination-wrapper {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin-top: 3rem !important;
+    padding: 1.5rem 0 !important;
+}
+
+.modern-pagination-wrapper .pagination,
+.modern-pagination {
+    display: flex !important;
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    gap: 0.5rem !important;
+    align-items: center !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+}
+
+.modern-pagination-wrapper .pagination .page-item,
+.modern-pagination .page-item {
+    margin: 0 !important;
+    list-style: none !important;
+}
+
+.modern-pagination-wrapper .pagination .page-link,
+.modern-pagination .page-link {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-width: 48px !important;
+    height: 48px !important;
+    padding: 0.75rem 1rem !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    color: var(--text-primary) !important;
+    background-color: #ffffff !important;
+    border: 2px solid #e9ecef !important;
+    border-radius: 12px !important;
+    text-decoration: none !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05) !important;
+    position: relative !important;
+    overflow: hidden !important;
+    margin-left: 0 !important;
+}
+
+.modern-pagination-wrapper .pagination .page-link::before,
+.modern-pagination .page-link::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: -100% !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent) !important;
+    transition: left 0.5s !important;
+}
+
+.modern-pagination-wrapper .pagination .page-link:hover::before,
+.modern-pagination .page-link:hover::before {
+    left: 100% !important;
+}
+
+.modern-pagination-wrapper .pagination .page-link:hover,
+.modern-pagination .page-link:hover {
+    color: #ffffff !important;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-hover-color) 100%) !important;
+    border-color: var(--primary-color) !important;
+    transform: translateY(-3px) !important;
+    box-shadow: 0 8px 16px rgba(255, 87, 34, 0.3) !important;
+    z-index: 1 !important;
+}
+
+.modern-pagination-wrapper .pagination .page-link:focus,
+.modern-pagination .page-link:focus {
+    outline: none !important;
+    box-shadow: 0 0 0 4px rgba(255, 87, 34, 0.2) !important;
+}
+
+.modern-pagination-wrapper .pagination .page-item.active .page-link,
+.modern-pagination .page-item.active .page-link {
+    color: #ffffff !important;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-hover-color) 100%) !important;
+    border-color: var(--primary-color) !important;
+    box-shadow: 0 8px 20px rgba(255, 87, 34, 0.4) !important;
+    transform: translateY(-2px) scale(1.05) !important;
+    font-weight: 700 !important;
+    z-index: 2 !important;
+}
+
+.modern-pagination-wrapper .pagination .page-item.active .page-link::before,
+.modern-pagination .page-item.active .page-link::before {
+    display: none !important;
+}
+
+.modern-pagination-wrapper .pagination .page-item.disabled .page-link,
+.modern-pagination .page-item.disabled .page-link {
+    color: #adb5bd !important;
+    background-color: #f8f9fa !important;
+    border-color: #e9ecef !important;
+    cursor: not-allowed !important;
+    opacity: 0.6 !important;
+    transform: none !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05) !important;
+    pointer-events: none !important;
+}
+
+.modern-pagination-wrapper .pagination .page-item.disabled .page-link:hover,
+.modern-pagination .page-item.disabled .page-link:hover {
+    color: #adb5bd !important;
+    background-color: #f8f9fa !important;
+    border-color: #e9ecef !important;
+    transform: none !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05) !important;
+}
+
+.modern-pagination-wrapper .pagination .page-item.disabled .page-link::before,
+.modern-pagination .page-item.disabled .page-link::before {
+    display: none !important;
+}
+
+.modern-pagination-wrapper .pagination .page-link i,
+.modern-pagination .page-link i {
+    font-size: 0.875rem !important;
+    transition: transform 0.3s ease !important;
+}
+
+.modern-pagination-wrapper .pagination .page-item:not(.disabled):hover .page-link i,
+.modern-pagination .page-item:not(.disabled):hover .page-link i {
+    transform: scale(1.2) !important;
+}
+
+.modern-pagination-wrapper .pagination .page-item:first-child .page-link,
+.modern-pagination-wrapper .pagination .page-item:last-child .page-link,
+.modern-pagination .page-item:first-child .page-link,
+.modern-pagination .page-item:last-child .page-link {
+    min-width: 48px !important;
+    padding: 0.75rem !important;
+    border-radius: 12px !important;
+}
+
+/* Responsive pagination */
+@media (max-width: 768px) {
+    .modern-pagination-wrapper {
+        margin-top: 2rem !important;
+        padding: 1rem 0 !important;
+    }
+    
+    .modern-pagination-wrapper .pagination,
+    .modern-pagination {
+        gap: 0.375rem !important;
+    }
+    
+    .modern-pagination-wrapper .pagination .page-link,
+    .modern-pagination .page-link {
+        min-width: 42px !important;
+        height: 42px !important;
+        padding: 0.625rem 0.875rem !important;
+        font-size: 0.9375rem !important;
+        border-radius: 10px !important;
+    }
+    
+    .modern-pagination-wrapper .pagination .page-item:first-child .page-link,
+    .modern-pagination-wrapper .pagination .page-item:last-child .page-link,
+    .modern-pagination .page-item:first-child .page-link,
+    .modern-pagination .page-item:last-child .page-link {
+        min-width: 42px !important;
+        padding: 0.625rem !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .modern-pagination-wrapper .pagination,
+    .modern-pagination {
+        gap: 0.25rem !important;
+    }
+    
+    .modern-pagination-wrapper .pagination .page-link,
+    .modern-pagination .page-link {
+        min-width: 38px !important;
+        height: 38px !important;
+        padding: 0.5rem 0.75rem !important;
+        font-size: 0.875rem !important;
+        border-radius: 8px !important;
+    }
+    
+    .modern-pagination-wrapper .pagination .page-item:first-child .page-link,
+    .modern-pagination-wrapper .pagination .page-item:last-child .page-link,
+    .modern-pagination .page-item:first-child .page-link,
+    .modern-pagination .page-item:last-child .page-link {
+        min-width: 38px !important;
+        padding: 0.5rem !important;
+    }
+}

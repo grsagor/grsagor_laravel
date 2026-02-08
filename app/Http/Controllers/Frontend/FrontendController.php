@@ -19,7 +19,7 @@ class FrontendController extends Controller
         $skills = Skill::all();
         $projects = Project::all();
         $reviews = Review::where('status', 1)->get();
-        $blogs = Blog::where('status', 1)->get();
+        $blogs = Blog::where('status', 1)->orderBy('date', 'desc')->limit(3)->get();
         $experiences = Experience::where('status', 1)->get();
         $data = [
             'skills' => $skills,
@@ -54,7 +54,7 @@ class FrontendController extends Controller
 
     public function blog()
     {
-        $blogs = Blog::where('status', 1)->get();
+        $blogs = Blog::where('status', 1)->orderBy('date', 'desc')->paginate(6);
         return view('front.pages.blogs.index', compact('blogs'));
     }
 

@@ -45,6 +45,10 @@
                     </div>
                 @endforelse
             </div>
+            
+            @if($blogs->hasPages())
+                {{ $blogs->links('pagination::bootstrap-5') }}
+            @endif
         </div>
     </section>
 @endsection
