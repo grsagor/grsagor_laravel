@@ -15,8 +15,8 @@
     @include('front.pages.home.sections.skills')
     @include('front.pages.home.sections.products')
     @include('front.pages.home.sections.testimonials')
-    @include('front.pages.home.sections.blogs')
     @include('front.pages.home.sections.contact')
+    @include('front.pages.home.sections.blogs')
 @endsection
 
 @section('modals')
