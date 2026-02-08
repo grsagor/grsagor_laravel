@@ -23,6 +23,9 @@ Route::controller(FrontendController::class)->group(function () {
     Route::get('/blog/{slug}', 'blogShow')->name('front.blog.show');   // Single blog post
     Route::get('/contact', 'contact')->name('front.contact');          // Contact page
     Route::post('/contact', 'contactSubmit')->name('front.contact.submit'); // Contact form submit
+    Route::get('/privacy-policy', 'privacyPolicy')->name('front.privacy'); // Privacy Policy
+    Route::get('/terms-of-service', 'termsOfService')->name('front.terms'); // Terms of Service
+    Route::get('/sitemap.xml', 'sitemap')->name('front.sitemap'); // Sitemap
     Route::get('/old-home', 'indexOld')->name('front.index.old');      // Optional old homepage
 });
 Route::controller(ContactController::class)->group(function () {

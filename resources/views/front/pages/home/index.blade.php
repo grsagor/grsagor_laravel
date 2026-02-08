@@ -1,9 +1,15 @@
+@php
+    $pageTitle = 'Home';
+    $pageDescription = 'Professional Web Developer & Software Engineer specializing in Laravel, PHP, and modern web technologies. Building scalable, high-performance web applications.';
+@endphp
+
 @extends('front.layout.app')
 
 @section('title', 'Home')
 
 @section('content')
     @include('front.pages.home.sections.hero')
+    @include('front.pages.home.sections.stats')
     @include('front.pages.home.sections.features')
     @include('front.pages.home.sections.experience')
     @include('front.pages.home.sections.skills')

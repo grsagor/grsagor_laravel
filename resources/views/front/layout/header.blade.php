@@ -1,4 +1,4 @@
-<header>
+<header id="mainHeader">
   <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top border-bottom">
     <div class="container">
       <a class="navbar-brand fw-bold fs-3" href="{{ route('front.index') }}">
@@ -17,12 +17,12 @@
               {!! request()->routeIs('front.index') ? '<span class="position-absolute bottom-0 start-50 translate-middle-x border border-2 rounded-pill" style="width: 30px; height: 3px; border-color: var(--primary-color);"></span>' : '' !!}
             </a>
           </li>
-          {{-- <li class="nav-item">
-            <a class="nav-link" href="{{ route('front.about') }}">About</a>
-          </li> --}}
-          {{-- <li class="nav-item">
-            <a class="nav-link" href="#resume">Resume</a>
-          </li> --}}
+          <li class="nav-item">
+            <a class="nav-link position-relative fw-medium {{ request()->routeIs('front.about') ? 'active' : '' }}" href="{{ route('front.about') }}">
+              About
+              {!! request()->routeIs('front.about') ? '<span class="position-absolute bottom-0 start-50 translate-middle-x border border-2 rounded-pill" style="width: 30px; height: 3px; border-color: var(--primary-color);"></span>' : '' !!}
+            </a>
+          </li>
           <li class="nav-item">
             <a class="nav-link position-relative fw-medium {{ request()->routeIs('front.projects') ? 'active' : '' }}" href="{{ route('front.projects') }}">
               Projects
@@ -35,12 +35,6 @@
               {!! request()->routeIs('front.blogs') ? '<span class="position-absolute bottom-0 start-50 translate-middle-x border border-2 rounded-pill" style="width: 30px; height: 3px; border-color: var(--primary-color);"></span>' : '' !!}
             </a>
           </li>
-          {{-- <li class="nav-item">
-            <a class="nav-link" href="#services">Services</a>
-          </li> --}}
-          {{-- <li class="nav-item">
-            <a class="nav-link" href="{{ route('front.contact') }}">Contact</a>
-          </li> --}}
           <li class="nav-item ms-3">
             <a href="{{ route('front.contact') }}" class="btn btn-primary rounded-pill px-4 py-2">
               Get In Touch
@@ -51,3 +45,17 @@
     </div>
   </nav>
 </header>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const navbar = document.querySelector('.navbar');
+    
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+});
+</script>

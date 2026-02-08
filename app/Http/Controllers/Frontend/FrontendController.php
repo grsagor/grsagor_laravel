@@ -82,6 +82,51 @@ class FrontendController extends Controller
         return redirect()->route('front.contact')->with('success', 'Message sent successfully!');
     }
 
+    public function privacyPolicy()
+    {
+        return view('front.pages.privacy-policy');
+    }
+
+    public function termsOfService()
+    {
+        return view('front.pages.terms-of-service');
+    }
+
+    public function sitemap()
+    {
+        $projects = Project::all();
+        $blogs = Blog::where('status', 1)->get();
+        
+        $urls = [
+            route('front.index'),
+            route('front.about'),
+            route('front.projects'),
+            route('front.blogs'),
+            route('front.contact'),
+            route('front.privacy'),
+            route('front.terms'),
+        ];
+
+        foreach ($projects as $project) {
+            $urls[] = route('front.projects.details', $project->id);
+        }
+
+        $xml = '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
+        $xml .= '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . "\n";
+
+        foreach ($urls as $url) {
+            $xml .= '  <url>' . "\n";
+            $xml .= '    <loc>' . htmlspecialchars($url) . '</loc>' . "\n";
+            $xml .= '    <changefreq>weekly</changefreq>' . "\n";
+            $xml .= '    <priority>0.8</priority>' . "\n";
+            $xml .= '  </url>' . "\n";
+        }
+
+        $xml .= '</urlset>';
+
+        return response($xml, 200)->header('Content-Type', 'text/xml');
+    }
+
 
 
 

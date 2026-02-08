@@ -1,2 +1,16 @@
 User-agent: *
-Disallow:
+Allow: /
+
+# Sitemap
+Sitemap: https://grsagor.com/sitemap.xml
+
+# Disallow admin area
+Disallow: /admin/
+Disallow: /admin
+
+# Allow important pages
+Allow: /
+Allow: /about
+Allow: /projects
+Allow: /blog
+Allow: /contact
