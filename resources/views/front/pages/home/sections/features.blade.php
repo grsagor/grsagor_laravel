@@ -1,4 +1,4 @@
-<section class="features py-5 bg-light" itemscope itemtype="https://schema.org/Service">
+<section class="features py-5 bg-white" itemscope itemtype="https://schema.org/Service">
   <div class="container">
     <x-section-title 
         title="Why Work With Me" 

@@ -494,16 +494,14 @@ section {
 /* ============================================
    FEATURE CARDS
    ============================================ */
-.feature-card,
-[class*="feature"] {
+.feature-card {
     transition: all var(--transition-normal) ease;
     border-radius: 12px;
     overflow: hidden;
     position: relative;
 }
 
-.feature-card:hover,
-[class*="feature"]:hover {
+.feature-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 15px 35px var(--shadow-md);
 }
