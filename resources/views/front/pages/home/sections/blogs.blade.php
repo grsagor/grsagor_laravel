@@ -1,4 +1,4 @@
-<section id="blogs" class="blogs-section bg-light">
+<section id="blogs" class="blogs-section">
     <div class="container">
 
         <x-section-title 

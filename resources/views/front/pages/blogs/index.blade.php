@@ -8,10 +8,10 @@
 @section('title', 'Blog')
 
 @section('content')
-    <div class="py-5" style="padding-top: 8rem;">
-        <div class="container mb-4">
+    <section class="blogs-page bg-light" style="padding-top: 8rem; padding-bottom: 5rem;">
+        <div class="container mb-4 pt-5">
             <x-breadcrumbs :items="[['label' => 'Blog']]" />
         </div>
         @include('front.pages.home.sections.blogs')
-    </div>
+    </section>
 @endsection
