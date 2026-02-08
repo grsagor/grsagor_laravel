@@ -101,6 +101,41 @@
                         </div>
                     </div>
 
+                    <hr class="my-4">
+                    <h6 class="mb-3">Statistics (Leave 0 to use database counts)</h6>
+
+                    <div class="form-group row">
+                        <label for="" class="col-sm-3 col-form-label">Projects Completed:</label>
+                        <div class="col-sm-9">
+                            <input type="number" name="stats_projects_completed" value="{{ Helper::getSettings('stats_projects_completed') }}" class="form-control" placeholder="0" min="0">
+                            <small class="text-muted">Set to 0 to use actual project count from database</small>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="" class="col-sm-3 col-form-label">Years Experience:</label>
+                        <div class="col-sm-9">
+                            <input type="number" name="stats_years_experience" value="{{ Helper::getSettings('stats_years_experience') }}" class="form-control" placeholder="0" min="0">
+                            <small class="text-muted">Set to 0 to use actual experience count from database</small>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="" class="col-sm-3 col-form-label">Happy Clients:</label>
+                        <div class="col-sm-9">
+                            <input type="number" name="stats_happy_clients" value="{{ Helper::getSettings('stats_happy_clients') }}" class="form-control" placeholder="0" min="0">
+                            <small class="text-muted">Set to 0 to use actual reviews count from database</small>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="" class="col-sm-3 col-form-label">Blog Posts:</label>
+                        <div class="col-sm-9">
+                            <input type="number" name="stats_blog_posts" value="{{ Helper::getSettings('stats_blog_posts') }}" class="form-control" placeholder="0" min="0">
+                            <small class="text-muted">Set to 0 to use actual blog posts count from database</small>
+                        </div>
+                    </div>
+
                     <div class="form-group text-end">
                         <button type="submit" class="btn btn-primary">Update</button>
                     </div>
