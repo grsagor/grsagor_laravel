@@ -5,8 +5,13 @@
         <span class="text-primary">iam</span>grsagor
       </a>
 
-      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation" id="navbarToggler">
+        <span class="navbar-toggler-icon" id="burgerIcon">
+          <i class="fa-solid fa-bars"></i>
+        </span>
+        <span class="navbar-toggler-icon d-none" id="closeIcon">
+          <i class="fa-solid fa-xmark"></i>
+        </span>
       </button>
 
       <div class="collapse navbar-collapse" id="mainNavbar">
@@ -49,7 +54,12 @@
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     const navbar = document.querySelector('.navbar');
+    const navbarToggler = document.getElementById('navbarToggler');
+    const burgerIcon = document.getElementById('burgerIcon');
+    const closeIcon = document.getElementById('closeIcon');
+    const mainNavbar = document.getElementById('mainNavbar');
     
+    // Handle scroll effect
     window.addEventListener('scroll', function() {
         if (window.scrollY > 50) {
             navbar.classList.add('scrolled');
@@ -57,5 +67,40 @@ document.addEventListener('DOMContentLoaded', function() {
             navbar.classList.remove('scrolled');
         }
     });
+    
+    // Toggle burger/close icon
+    if (navbarToggler && mainNavbar && burgerIcon && closeIcon) {
+        // Function to update icons based on menu state
+        function updateIcons() {
+            const isExpanded = mainNavbar.classList.contains('show');
+            if (isExpanded) {
+                // Menu is open - show X icon
+                burgerIcon.classList.add('d-none');
+                closeIcon.classList.remove('d-none');
+            } else {
+                // Menu is closed - show burger icon
+                burgerIcon.classList.remove('d-none');
+                closeIcon.classList.add('d-none');
+            }
+        }
+        
+        // Listen for Bootstrap collapse events - only change icon when animation completes
+        mainNavbar.addEventListener('shown.bs.collapse', function() {
+            // Menu fully opened
+            burgerIcon.classList.add('d-none');
+            closeIcon.classList.remove('d-none');
+            navbarToggler.setAttribute('aria-expanded', 'true');
+        });
+        
+        mainNavbar.addEventListener('hidden.bs.collapse', function() {
+            // Menu fully closed
+            burgerIcon.classList.remove('d-none');
+            closeIcon.classList.add('d-none');
+            navbarToggler.setAttribute('aria-expanded', 'false');
+        });
+        
+        // Initial check
+        updateIcons();
+    }
 });
 </script>
