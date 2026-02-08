@@ -1,5 +1,5 @@
 <!-- Back to Top Button -->
-<a href="#top" class="back-to-top" id="backToTop" aria-label="Back to top">
+<a href="#top" class="back-to-top btn btn-primary rounded-circle" id="backToTop" aria-label="Back to top">
     <i class="fa-solid fa-arrow-up"></i>
 </a>
 

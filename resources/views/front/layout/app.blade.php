@@ -32,9 +32,6 @@
 
     @yield('modals')
     
-    {{-- Floating CTA --}}
-    <x-floating-cta />
-    
     {{-- Back to Top Button --}}
     <x-back-to-top />
 

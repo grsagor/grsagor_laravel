@@ -1,6 +1,5 @@
 <section id="blogs" class="blogs-section">
     <div class="container">
-
         <x-section-title 
             title="Latest Blogs" 
             subtitle="Insights, tutorials, and updates from my journey in software development"

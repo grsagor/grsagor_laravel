@@ -191,6 +191,10 @@
     position: relative;
     overflow: hidden;
 }
+.btn.show {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
 
 .btn-primary::before {
     content: '';
@@ -907,6 +911,35 @@ footer .list-inline-item a:hover {
     box-shadow: 0 5px 15px var(--shadow-primary);
 }
 
+/* Footer Social Links - Only icon color changes on hover, no background */
+.footer-social-link {
+    color: var(--text-muted) !important;
+    transition: color var(--transition-normal) ease, transform var(--transition-normal) ease;
+    display: inline-block;
+    text-decoration: none;
+    background: transparent !important;
+    width: auto !important;
+    height: auto !important;
+    border-radius: 0 !important;
+    padding: 0.5rem;
+}
+
+.footer-social-link:hover {
+    color: var(--primary-color) !important;
+    transform: translateY(-3px);
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+.footer-social-link:hover i {
+    color: var(--primary-color) !important;
+}
+
+.footer-social-link i {
+    transition: color var(--transition-normal) ease;
+    color: inherit;
+}
+
 /* ============================================
    MODAL
    ============================================ */
@@ -1049,30 +1082,54 @@ a, button, input, textarea, select {
     box-shadow: 0 0 0 0.2rem var(--shadow-primary);
 }
 
-/* Back to top button (if needed) */
+/* Back to top button */
 .back-to-top {
     position: fixed;
     bottom: 30px;
-    left: 30px;
+    right: 30px;
     width: 50px;
     height: 50px;
-    background: var(--primary-color);
-    color: var(--text-light);
-    border-radius: 50%;
+    padding: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 5px 15px var(--shadow-primary);
     opacity: 0;
     visibility: hidden;
     transition: all var(--transition-normal) ease;
     z-index: 999;
+    text-decoration: none;
+    border: none;
+    overflow: hidden;
+}
+
+.back-to-top i {
+    position: relative;
+    z-index: 2;
+    font-size: 1.1rem;
+}
+
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
 }
 
 @media (max-width: 767px) {
     .back-to-top {
         bottom: 20px;
-        left: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+    }
+    
+    .back-to-top i {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .back-to-top {
+        bottom: 20px;
+        right: 20px;
         width: 45px;
         height: 45px;
     }

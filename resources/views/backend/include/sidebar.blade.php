@@ -109,6 +109,12 @@
                         <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div> Experience Management
                     </a>
                 @endif
+                @if (Helper::hasRight('dashboard.view'))
+                    <a class="nav-link {{ Route::is('admin.contacts.index') ? 'active' : '' }}"
+                        href="{{ route('admin.contacts.index') }}">
+                        <div class="sb-nav-link-icon"><i class="fas fa-envelope"></i></div> Contact Management
+                    </a>
+                @endif
             </div>
         </div>
     </nav>

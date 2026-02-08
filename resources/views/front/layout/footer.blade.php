@@ -38,37 +38,37 @@
                 <ul class="list-inline mb-0">
                     <li class="list-inline-item">
                         <a href="https://facebook.com/iamgrsagor" target="_blank" rel="noopener noreferrer"
-                            class="text-muted hover-text-primary fs-5" aria-label="Facebook">
+                            class="footer-social-link text-muted fs-5" aria-label="Facebook">
                             <i class="fa-brands fa-facebook-f"></i>
                         </a>
                     </li>
                     <li class="list-inline-item">
                         <a href="https://github.com/grsagor" target="_blank" rel="noopener noreferrer"
-                            class="text-muted hover-text-primary fs-5" aria-label="GitHub">
+                            class="footer-social-link text-muted fs-5" aria-label="GitHub">
                             <i class="fa-brands fa-github"></i>
                         </a>
                     </li>
                     <li class="list-inline-item">
                         <a href="https://www.linkedin.com/in/iamgrsagor/" target="_blank" rel="noopener noreferrer"
-                            class="text-muted hover-text-primary fs-5" aria-label="LinkedIn">
+                            class="footer-social-link text-muted fs-5" aria-label="LinkedIn">
                             <i class="fa-brands fa-linkedin-in"></i>
                         </a>
                     </li>
                     <li class="list-inline-item">
                         <a href="https://medium.com/@iamgrsagor" target="_blank" rel="noopener noreferrer"
-                            class="text-muted hover-text-primary fs-5" aria-label="Medium">
+                            class="footer-social-link text-muted fs-5" aria-label="Medium">
                             <i class="fa-brands fa-medium"></i>
                         </a>
                     </li>
                     <li class="list-inline-item">
                         <a href="https://dev.to/iamgrsagor" target="_blank" rel="noopener noreferrer"
-                            class="text-muted hover-text-primary fs-5" aria-label="Dev.to">
+                            class="footer-social-link text-muted fs-5" aria-label="Dev.to">
                             <i class="fa-brands fa-dev"></i>
                         </a>
                     </li>
                     <li class="list-inline-item">
                         <a href="https://x.com/iamgrsagor" target="_blank" rel="noopener noreferrer"
-                            class="text-muted hover-text-primary fs-5" aria-label="Twitter">
+                            class="footer-social-link text-muted fs-5" aria-label="Twitter">
                             <i class="fa-brands fa-x-twitter"></i>
                         </a>
                     </li>
