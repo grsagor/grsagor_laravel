@@ -19,22 +19,21 @@
                 </a>
             @endif
         </div>
-        
-        @if($project->status)
-            <div class="mb-3">
-                <span class="badge bg-success fs-6 px-3 py-2">
-                    <i class="fa-solid fa-check-circle me-1"></i>Status: {{ $project->status }}
-                </span>
-            </div>
-        @endif
 
         <div class="mt-4">
             <h5 class="fw-semibold mb-3">Technologies Used</h5>
             <div class="d-flex flex-wrap gap-2">
-                <span class="badge bg-light text-dark px-3 py-2">Laravel</span>
-                <span class="badge bg-light text-dark px-3 py-2">PHP</span>
-                <span class="badge bg-light text-dark px-3 py-2">JavaScript</span>
-                <span class="badge bg-light text-dark px-3 py-2">Bootstrap</span>
+                @php
+                    $technologies = collect(preg_split('/[\r\n,]+/', (string) $project->technologies))
+                        ->map(fn ($tech) => trim($tech))
+                        ->filter();
+                @endphp
+
+                @forelse($technologies as $technology)
+                    <span class="badge bg-light text-dark px-3 py-2">{{ $technology }}</span>
+                @empty
+                    <span class="text-muted">No technologies added yet.</span>
+                @endforelse
             </div>
         </div>
     </div>

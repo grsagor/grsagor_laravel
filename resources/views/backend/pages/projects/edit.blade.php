@@ -48,6 +48,12 @@
                 </div>
 
                 <div class="form-group">
+                    <label for="technologies">Technologies</label>
+                    <textarea class="form-control" id="technologies" name="technologies" rows="2" placeholder="Laravel, PHP, JavaScript, Bootstrap">{{ $project->technologies }}</textarea>
+                    <small class="text-muted">Use comma-separated values.</small>
+                </div>
+
+                <div class="form-group">
                     <label for="status">Status</label>
                     <select class="form-control" id="status" name="status">
                         <option value="1" {{ $project->status == 1 ? 'selected' : '' }}>Active</option>

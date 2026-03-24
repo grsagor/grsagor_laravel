@@ -20,12 +20,19 @@ class ProjectController extends Controller
         if ($request->ajax()) {
             $data = Project::orderBy('order')->orderByDesc('id')->get();
             return DataTables::of($data)
+                ->addColumn('status_badge', function ($row) {
+                    if ((int) $row->status === 1) {
+                        return '<span class="badge bg-success">Active</span>';
+                    }
+
+                    return '<span class="badge bg-secondary">Inactive</span>';
+                })
                 ->addColumn('action', function ($row) {
                     $actionBtn = '<button class="edit btn btn-success btn-sm edit_btn" data-url="' . route('admin.projects.edit', ['id' => $row->id]) . '">Edit</button> ';
                     $actionBtn .= '<button class="delete btn btn-danger btn-sm delete_btn" data-url="' . route('admin.projects.delete', ['id' => $row->id]) . '">Delete</button>';
                     return $actionBtn;
                 })
-                ->rawColumns(['action'])
+                ->rawColumns(['status_badge', 'action'])
                 ->make(true);
         }
     }
@@ -45,6 +52,7 @@ class ProjectController extends Controller
             'image' => 'required|file|max:2048',
             'github' => 'nullable|string|max:255',
             'live' => 'nullable|string|max:255',
+            'technologies' => 'nullable|string',
             'status' => 'nullable|integer',
             'order' => 'nullable|integer',
         ]);
@@ -75,6 +83,7 @@ class ProjectController extends Controller
                 'image' => $image_path,
                 'github' => $request->github,
                 'live' => $request->live,
+                'technologies' => $request->technologies,
                 'status' => $request->status ?? 1,
                 'order' => $request->order ?? 0,
             ]);
@@ -109,6 +118,7 @@ class ProjectController extends Controller
             'image' => 'nullable|file|max:2048',
             'github' => 'nullable|string|max:255',
             'live' => 'nullable|string|max:255',
+            'technologies' => 'nullable|string',
             'status' => 'nullable|integer',
             'order' => 'nullable|integer',
         ]);
@@ -141,6 +151,7 @@ class ProjectController extends Controller
                 'image' => $image_path,
                 'github' => $request->github,
                 'live' => $request->live,
+                'technologies' => $request->technologies,
                 'status' => $request->status ? 1 : 0,
                 'order' => $request->order ?? 0,
             ]);

@@ -23,6 +23,7 @@
                             <th>ID</th>
                             <th>Name</th>
                             <th>Client</th>
+                            <th>Status</th>
                             <th>Description</th>
                             <th>Action</th>
                         </tr>
@@ -53,6 +54,12 @@
             {
                 data: 'client_id',
                 name: 'client_id'
+            },
+            {
+                data: 'status_badge',
+                name: 'status',
+                orderable: true,
+                searchable: true
             },
             {
                 data: 'description',

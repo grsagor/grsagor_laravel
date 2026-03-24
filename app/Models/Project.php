@@ -14,6 +14,7 @@ class Project extends Model
         'image',
         'github',
         'live',
+        'technologies',
         'status',
         'order',
     ];
