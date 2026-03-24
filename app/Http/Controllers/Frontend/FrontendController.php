@@ -17,7 +17,7 @@ class FrontendController extends Controller
     public function index()
     {
         $skills = Skill::all();
-        $projects = Project::all();
+        $projects = Project::where('status', 1)->orderBy('order')->orderByDesc('id')->get();
         $reviews = Review::where('status', 1)->get();
         $blogs = Blog::where('status', 1)->orderBy('date', 'desc')->limit(3)->get();
         $experiences = Experience::where('status', 1)->get();
@@ -42,13 +42,13 @@ class FrontendController extends Controller
 
     public function projects()
     {
-        $projects = Project::all();
+        $projects = Project::where('status', 1)->orderBy('order')->orderByDesc('id')->get();
         return view('front.pages.projects.index', compact('projects'));
     }
 
     public function projectDetails($id)
     {
-        $project = Project::findOrFail($id);
+        $project = Project::where('status', 1)->findOrFail($id);
         return view('front.pages.projects.details', compact('project'));
     }
 
