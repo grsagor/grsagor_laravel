@@ -18,7 +18,7 @@ class ProjectController extends Controller
     public function list(Request $request)
     {
         if ($request->ajax()) {
-            $data = Project::all();
+            $data = Project::orderBy('order')->orderByDesc('id')->get();
             return DataTables::of($data)
                 ->addColumn('action', function ($row) {
                     $actionBtn = '<button class="edit btn btn-success btn-sm edit_btn" data-url="' . route('admin.projects.edit', ['id' => $row->id]) . '">Edit</button> ';
