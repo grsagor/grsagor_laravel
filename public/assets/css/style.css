@@ -3,8 +3,8 @@
    ============================================ */
 :root {
     /* Primary Colors - DO NOT CHANGE */
-    --primary-color: #ff5722;
-    --primary-hover-color: #e64a19;
+    --primary-color: #205048;
+    --primary-hover-color: #1a403a;
     
     /* Background Colors */
     --bg-primary: #ffffff;
@@ -31,8 +31,9 @@
     --shadow-sm: rgba(0, 0, 0, 0.05);
     --shadow-md: rgba(0, 0, 0, 0.1);
     --shadow-lg: rgba(0, 0, 0, 0.15);
-    --shadow-primary: rgba(255, 87, 34, 0.3);
-    --shadow-primary-hover: rgba(255, 87, 34, 0.4);
+    --shadow-primary: rgba(32, 80, 72, 0.3);
+    --shadow-primary-hover: rgba(32, 80, 72, 0.4);
+    --primary-overlay: rgba(32, 80, 72, 0.95);
     
     /* Card Colors */
     --card-bg: #ffffff;
@@ -161,19 +162,6 @@
     50% {
         transform: translateY(-20px);
     }
-}
-
-/* ============================================
-   UTILITY CLASSES
-   ============================================ */
-.animate-on-scroll {
-    opacity: 0;
-    transition: opacity var(--transition-slow) ease, transform var(--transition-slow) ease;
-}
-
-.animate-on-scroll.animated {
-    opacity: 1;
-    animation: fadeInUp var(--transition-slow) ease forwards;
 }
 
 /* ============================================
@@ -427,10 +415,11 @@ header {
 }
 
 .contact-icons a:hover {
-    color: var(--primary-color);
-    background: rgba(255, 255, 255, 0.2);
+    color: var(--text-light);
+    background: var(--primary-overlay);
+    border: 1px solid rgba(255, 255, 255, 0.35);
     transform: translateY(-5px) scale(1.1);
-    box-shadow: 0 5px 15px rgba(255, 87, 34, 0.4);
+    box-shadow: 0 8px 18px var(--shadow-primary-hover);
 }
 
 /* ============================================
@@ -656,7 +645,7 @@ section {
 }
 
 .product-overlay {
-    background: rgba(255, 87, 34, 0.95);
+    background: var(--primary-overlay);
     opacity: 0;
     transition: opacity var(--transition-normal) ease;
     backdrop-filter: blur(5px);
@@ -1264,7 +1253,7 @@ a, button, input, textarea, select {
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-hover-color) 100%) !important;
     border-color: var(--primary-color) !important;
     transform: translateY(-3px) !important;
-    box-shadow: 0 8px 16px rgba(255, 87, 34, 0.3) !important;
+    box-shadow: 0 8px 16px var(--shadow-primary-hover) !important;
     z-index: 1 !important;
 }
 
@@ -1279,7 +1268,7 @@ a, button, input, textarea, select {
     color: #ffffff !important;
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-hover-color) 100%) !important;
     border-color: var(--primary-color) !important;
-    box-shadow: 0 8px 20px rgba(255, 87, 34, 0.4) !important;
+    box-shadow: 0 8px 20px var(--shadow-primary) !important;
     transform: translateY(-2px) scale(1.05) !important;
     font-weight: 700 !important;
     z-index: 2 !important;

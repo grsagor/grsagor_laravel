@@ -5,25 +5,36 @@
 (function() {
     'use strict';
 
-    // Intersection Observer for scroll animations
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
+    document.addEventListener('DOMContentLoaded', function() {
+        // Migrate existing custom animation markup to AOS.
+        const animateElements = document.querySelectorAll('.animate-on-scroll');
+        animateElements.forEach(function(el) {
+            if (!el.hasAttribute('data-aos')) {
+                el.setAttribute('data-aos', 'fade-up');
+            }
 
-    const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('animated');
-                observer.unobserve(entry.target);
+            const rawDelay = el.style.animationDelay;
+            if (rawDelay && !el.hasAttribute('data-aos-delay')) {
+                const delayInMs = Math.round(parseFloat(rawDelay) * 1000);
+                if (!Number.isNaN(delayInMs) && delayInMs > 0) {
+                    el.setAttribute('data-aos-delay', String(delayInMs));
+                }
+            }
+
+            // Prevent old inline animation-delay from affecting AOS timing.
+            if (rawDelay) {
+                el.style.animationDelay = '';
             }
         });
-    }, observerOptions);
 
-    // Observe all elements with animate-on-scroll class
-    document.addEventListener('DOMContentLoaded', function() {
-        const animateElements = document.querySelectorAll('.animate-on-scroll');
-        animateElements.forEach(el => observer.observe(el));
+        if (typeof AOS !== 'undefined') {
+            AOS.init({
+                duration: 700,
+                once: true,
+                easing: 'ease-out-cubic',
+                offset: 80
+            });
+        }
 
         // Animate progress bars
         const progressBars = document.querySelectorAll('.progress-bar[data-proficiency]');
@@ -37,7 +48,10 @@
                     progressObserver.unobserve(bar);
                 }
             });
-        }, observerOptions);
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
 
         progressBars.forEach(bar => progressObserver.observe(bar));
     });

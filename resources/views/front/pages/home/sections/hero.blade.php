@@ -4,8 +4,9 @@
   <div class="container h-100 d-flex flex-column align-items-center justify-content-center">
     <div class="text-center position-relative z-1 animate-on-scroll">
       <h1 class="display-4 fw-bold mb-4">Hi, I'm a Software Engineer</h1>
-      <p class="lead mt-3 mb-4">I build clean, scalable, Laravel-based applications that solve real-world problems.</p>
-      <a href="{{ route('front.projects') }}" class="btn btn-primary btn-lg mt-4">View My Projects</a>
+      <p class="lead mt-3 mb-3">I help businesses build fast, scalable web applications with Laravel, PHP, Next.js, React.js, Node.js, and Express.js - plus custom WordPress plugins/themes and reliable server setup.</p>
+      <p class="mb-4">Clean code, clear communication, and on-time delivery.</p>
+      <a href="{{ route('front.projects') }}" class="btn btn-primary btn-lg mt-3">View My Projects</a>
 
       <!-- Icon-only Contact Info -->
       <div class="contact-icons mt-5 d-flex justify-content-center gap-3 flex-wrap">
