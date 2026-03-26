@@ -39,7 +39,8 @@ return [
 
         'smtp' => [
             'transport' => 'smtp',
-            'url' => env('MAIL_URL') ?: null,
+            // Force host/port based SMTP config to avoid bad MAIL_URL values.
+            'url' => null,
             'host' => env('MAIL_HOST', '127.0.0.1'),
             'port' => env('MAIL_PORT', 2525),
             'encryption' => env('MAIL_ENCRYPTION', 'tls'),

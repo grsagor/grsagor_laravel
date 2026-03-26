@@ -7,7 +7,7 @@
         $pageTitle = '404 - Page Not Found';
         $pageDescription = 'The page you are looking for could not be found.';
     @endphp
-@endsection
+@endpush
 
 @section('content')
 <section class="py-5 d-flex align-items-center" style="min-height: 70vh; padding-top: 8rem;">
