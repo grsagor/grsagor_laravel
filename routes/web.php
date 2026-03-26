@@ -31,7 +31,7 @@ Route::controller(FrontendController::class)->group(function () {
 });
 Route::controller(ContactController::class)->group(function () {
     Route::get('/captcha', 'generateCaptcha')->name('front.generate.captcha');
-    Route::post('/contact', 'send')->name('front.contact.send');
+    Route::post('/contact/send', 'send')->name('front.contact.send');
 });
 
 Route::controller(FrontendController::class)->group(function(){

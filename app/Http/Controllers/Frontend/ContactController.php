@@ -51,7 +51,7 @@ class ContactController extends Controller
             ]);
 
             // Send email notification
-            $recipientEmail = config('mail.from.address', 'grsagor08@gmail.com');
+            $recipientEmail = 'grsagor08@gmail.com';
             
             try {
                 Mail::html(
@@ -59,7 +59,7 @@ class ContactController extends Controller
                         'name' => $request->name,
                         'email' => $request->email,
                         'subject' => $request->subject,
-                        'message' => $request->message
+                        'userMessage' => $request->message
                     ])->render(),
                     function ($mail) use ($request, $recipientEmail) {
                         $mail->to($recipientEmail)

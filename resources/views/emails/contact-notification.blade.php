@@ -27,7 +27,7 @@
             </tr>
             <tr>
                 <td style="padding: 10px 0; font-weight: bold; vertical-align: top; color: #555;">Message:</td>
-                <td style="padding: 10px 0; white-space: pre-wrap;">{{ $message }}</td>
+                <td style="padding: 10px 0; white-space: pre-wrap;">{{ $userMessage }}</td>
             </tr>
         </table>
     </div>
