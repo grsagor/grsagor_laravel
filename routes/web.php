@@ -38,7 +38,7 @@ Route::controller(FrontendController::class)->group(function(){
     Route::get('reset-password', 'forgotPassword');
     Route::any('reset-otp-send', 'resetOtpSend');
     Route::any('change-password', 'otp');
-    Route::get('login', 'login')->name('login');
+    Route::get('nogor-login', 'login')->name('login');
     Route::get('registration', 'registration');
 });
 
